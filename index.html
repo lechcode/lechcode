@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  LECHCODE — Agentur-Landingpage  ·  „Code mit Seele."             ║
+  ║  Stil: „Warm-dunkel / Lagerfeuer" (Richtung 3, vom Team gewählt) ║
+  ║  Single-File, kein Build. Von & für Lenny, Marie & Michael.      ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  ⚠ VOR GOOGLE-GO-LIVE:                                            ║
+  ║   1) Impressum + Datenschutz anlegen & verlinken (Footer)         ║
+  ║   2) <meta name="robots" content="noindex"> ENTFERNEN            ║
+  ║   3) Cal.com-Link einsetzen  (Suche: PLATZHALTER-CAL)           ║
+  ║   4) Web3Forms-Key einsetzen (Suche: PLATZHALTER-FORM)          ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.classList.add('js');</script>
+  <!-- ⚠ NOINDEX bleibt, bis Impressum + Datenschutz live sind. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Lechcode · Websites mit Seele aus Landsberg am Lech</title>
+  <meta name="description" content="Lechcode — moderne, schnelle Websites aus Landsberg am Lech. Für Menschen & Unternehmen, die Gutes tun: Gesundheit, Coaching, Achtsamkeit, Naturheilkunde, Nachhaltigkeit. Wir bauen deine Seite vorab — als Geschenk." />
+  <meta name="theme-color" content="#16130c" />
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTUnIGZpbGw9JyMxZjFiMTInLz48Y2lyY2xlIGN4PSczMicgY3k9JzMyJyByPScyMi41JyBmaWxsPSdub25lJyBzdHJva2U9JyNlN2I5NjQnIHN0cm9rZS13aWR0aD0nMy40Jy8+PHBhdGggZD0nTTE1IDM2IEMgMjIgMjgsIDI5IDI4LCAzMyAzNCBDIDM3IDQwLCA0NCA0MCwgNTAgMzEnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2U3Yjk2NCcgc3Ryb2tlLXdpZHRoPSc0LjInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxjaXJjbGUgY3g9JzQ0JyBjeT0nMTguNScgcj0nMy40JyBmaWxsPScjZTg5MjNmJy8+PC9zdmc+" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+  /* ===== 1 · TOKENS — warme Lagerfeuer-Palette ===== */
+  :root{
+    /* dunkel */
+    --night:#16130c; --night-2:#1d1810; --panel:#241e14; --panel-2:#2c2418;
+    --bone:#f4ecdc; --bone-dim:#cfc3ac; --muted:#9a8e76;
+    /* warm-hell (Lichtungen) */
+    --cream:#f7efe0; --sand:#efe2cc; --warm-white:#fffaf0;
+    --ink:#2a2218; --ink-soft:#6e6150; --ink-faint:#9c8e78;
+    /* akzente */
+    --amber:#e8923f; --ember:#f0a85e; --gold:#e7b964; --gold-deep:#c79a4f; --moss:#9aa873; --clay:#bd7b54;
+    --line-d:rgba(231,185,100,.16); --line-l:rgba(42,34,24,.12);
+    --display:"Space Grotesk",-apple-system,sans-serif; --mono:"JetBrains Mono",monospace;
+    --sans:"Inter",-apple-system,sans-serif; --hand:"Caveat",cursive;
+    --radius:18px; --radius-lg:24px;
+    --nav-h:68px;
+    --shadow-d:0 30px 60px -30px rgba(0,0,0,.7); --shadow-l:0 26px 50px -30px rgba(70,50,30,.34);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);}
+  body{background:var(--night);color:var(--bone);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;}
+  /* feines Korn über alles — taktil, anti-digital */
+  body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  h1,h2,h3,h4{font-family:var(--display);line-height:1.1;letter-spacing:-.02em;font-weight:600;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  ::selection{background:rgba(232,146,63,.3);color:var(--bone);}
+  .wrap{width:min(1120px,92vw);margin-inline:auto;}
+  section{padding:clamp(56px,9vw,108px) 0;position:relative;}
+  .sec-head{max-width:62ch;margin-bottom:clamp(32px,5vw,52px);}
+  .sec-head h2{font-size:clamp(28px,4.4vw,44px);margin-top:14px;}
+  .sec-head p{font-size:clamp(16px,1.6vw,18px);margin-top:14px;}
+  .lead{font-size:clamp(17px,1.8vw,19px);}
+
+  /* Helligkeits-Kontexte */
+  .dark{background:var(--night);color:var(--bone);}
+  .dark h1,.dark h2,.dark h3{color:#fbf5e8;}
+  .dark .sec-head p,.dark .lead{color:var(--bone-dim);}
+  .light{background:var(--cream);color:var(--ink);}
+  .light h1,.light h2,.light h3{color:var(--ink);}
+  .light .sec-head p,.light .lead{color:var(--ink-soft);}
+  .sand{background:var(--sand);}
+
+  .eyebrow{font-family:var(--display);font-weight:600;font-size:13.5px;letter-spacing:.02em;display:inline-flex;align-items:center;gap:9px;color:var(--ember);}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px 1px rgba(232,146,63,.6);}
+  .light .eyebrow{color:var(--gold-deep);}
+  .light .eyebrow::before{box-shadow:none;}
+  .wm{font-family:var(--display);font-weight:700;letter-spacing:-.04em;line-height:1;display:inline-flex;align-items:baseline;}
+  .wm .lech{color:var(--bone);} .wm .code{color:var(--gold);font-family:var(--mono);font-weight:700;letter-spacing:-.02em;}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;background:var(--amber);color:#2a1808;
+    font-family:var(--display);font-weight:700;font-size:15.5px;padding:14px 24px;border-radius:999px;
+    box-shadow:0 16px 28px -12px rgba(232,146,63,.6);transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap;}
+  .btn:hover{transform:translateY(-2px);background:var(--ember);}
+  .btn .arr{transition:transform .25s;} .btn:hover .arr{transform:translateX(4px);}
+  .btn-ghost{background:transparent;color:var(--bone);border:1.5px solid var(--line-d);box-shadow:none;font-weight:600;}
+  .btn-ghost:hover{background:rgba(231,185,100,.08);border-color:rgba(231,185,100,.4);}
+  .light .btn-ghost{color:var(--ink);border-color:rgba(42,34,24,.2);}
+  .light .btn-ghost:hover{background:rgba(189,123,84,.08);border-color:var(--clay);}
+
+  /* ===== 2 · NAV ===== */
+  .nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:rgba(22,19,12,.72);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid var(--line-d);}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:100%;}
+  .nav .wm{font-size:24px;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a:not(.btn){font-size:15px;color:var(--bone-dim);font-weight:500;position:relative;padding:4px 0;transition:color .2s;}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:2px;background:var(--amber);border-radius:2px;transition:width .25s;}
+  .nav-links a:not(.btn):hover{color:var(--bone);} .nav-links a:not(.btn):hover::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .nav-toggle span{display:block;width:24px;height:2px;background:var(--bone);border-radius:2px;transition:.3s;}
+  .nav-toggle span+span{margin-top:6px;}
+
+  /* ===== 3 · HERO — Lagerfeuer ===== */
+  .hero{overflow:hidden;isolation:isolate;padding:clamp(64px,11vw,128px) 0 clamp(72px,12vw,136px);
+    background:
+      radial-gradient(46vmax 40vmax at 85% 6%, rgba(232,146,63,.32), transparent 58%),
+      radial-gradient(40vmax 38vmax at 4% 114%, rgba(154,168,115,.16), transparent 55%),
+      radial-gradient(120% 120% at 70% 0%, #241d12 0%, var(--night) 60%);}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(40vmax 36vmax at 85% 6%, rgba(240,168,94,.12), transparent 60%);animation:breathe 11s ease-in-out infinite;}
+  @keyframes breathe{0%,100%{opacity:.8;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}}
+  .hero h1{font-size:clamp(36px,6.4vw,72px);font-weight:600;margin:22px 0 0;max-width:16ch;letter-spacing:-.03em;}
+  .hero h1 .soul{color:var(--gold);}
+  .hero h1 .q{color:var(--bone-dim);}
+  .hero-sub{color:var(--bone-dim);max-width:52ch;margin-top:22px;font-size:clamp(16px,1.9vw,19px);}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+  .trust{display:inline-flex;align-items:center;gap:10px;margin-top:34px;font-size:14px;color:var(--bone-dim);
+    background:rgba(231,185,100,.08);border:1px solid var(--line-d);padding:9px 16px;border-radius:999px;transition:.2s;}
+  .trust:hover{border-color:rgba(231,185,100,.4);}
+  .live-dot{width:9px;height:9px;border-radius:50%;background:#7fe0a6;flex:none;box-shadow:0 0 0 0 rgba(127,224,166,.6);animation:pulse 2.4s ease-out infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,166,.5);}70%{box-shadow:0 0 0 9px rgba(127,224,166,0);}100%{box-shadow:0 0 0 0 rgba(127,224,166,0);}}
+
+  /* Lech-Welle Trenner */
+  .wave{display:block;width:100%;height:56px;}
+  /* sanft fließende Lech-Welle (2 Lagen für Tiefe) */
+  .wave-anim{animation:wave-flow 16s linear infinite;will-change:transform;}
+  .wave-back{animation-duration:25s;}
+  @keyframes wave-flow{to{transform:translateX(-1440px);}}
+  @media (prefers-reduced-motion:reduce){.wave-anim{animation:none;}}
+
+  /* ===== 4 · WEDGE ===== */
+  .wedge h2{max-width:18ch;} .wedge .gift{color:var(--clay);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(36px,5vw,54px);}
+  .step{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow-l);}
+  .step .num{font-family:var(--display);font-size:15px;font-weight:700;color:#7a4a18;background:rgba(232,146,63,.16);width:38px;height:38px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;}
+  .step h3{font-size:19px;margin-bottom:7px;} .step p{color:var(--ink-soft);font-size:15px;}
+
+  /* ===== 5 · PORTFOLIO (dunkel) ===== */
+  .grid-work{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
+  .work{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-d);transition:transform .3s,border-color .3s;}
+  .work:hover{transform:translateY(-6px);border-color:rgba(231,185,100,.42);}
+  .work-canvas{padding:32px 26px 28px;min-height:172px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;
+    background:var(--panel);background-image:radial-gradient(120% 120% at 0% 0%, color-mix(in srgb, var(--c-1) 26%, var(--panel)), var(--panel) 75%);}
+  .work-canvas .tag{font-family:var(--display);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--c-1);font-weight:600;margin-bottom:10px;}
+  .work-canvas .head{font-family:var(--display);font-weight:600;font-size:21px;line-height:1.15;color:#fbf5e8;max-width:18ch;}
+  .work-canvas .swatches{display:flex;gap:6px;margin-top:16px;}
+  .work-canvas .swatches i{width:18px;height:18px;border-radius:6px;display:block;}
+  .work-meta{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-top:1px solid var(--line-d);}
+  .work-meta .name{font-family:var(--display);font-weight:600;font-size:16px;color:var(--bone);}
+  .work-meta .go{font-size:13.5px;color:var(--ember);font-weight:500;display:inline-flex;gap:5px;transition:gap .25s;}
+  .work:hover .work-meta .go{gap:9px;}
+  .badge-live{position:absolute;top:14px;right:16px;display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.06em;font-weight:700;color:#9be8bd;background:rgba(127,224,166,.14);border:1px solid rgba(127,224,166,.34);padding:5px 10px;border-radius:999px;}
+  .badge-live .live-dot{width:7px;height:7px;animation:none;box-shadow:none;}
+
+  /* ===== 6 · FÜR WEN (hell/sand) ===== */
+  .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(30px,4vw,46px);}
+  .niche-card{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:24px 22px;transition:transform .25s,box-shadow .25s;}
+  .niche-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-l);}
+  .niche-card .ic{font-size:24px;margin-bottom:12px;line-height:1;}
+  .niche-card h3{font-size:18px;margin-bottom:5px;} .niche-card p{font-size:14px;color:var(--ink-soft);}
+
+  /* ===== 7 · WARUM (dunkel) ===== */
+  .why h2{font-size:clamp(26px,4vw,42px);}
+  .responsive-box{display:flex;gap:20px;align-items:flex-start;background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:clamp(28px,4vw,42px);}
+  .responsive-box .devs{font-size:30px;line-height:1.1;flex:none;white-space:nowrap;}
+  .responsive-box h3{font-size:18px;margin-bottom:6px;color:var(--gold);}
+  .responsive-box p{font-size:15px;color:var(--bone-dim);} .responsive-box b{color:#fbf5e8;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .statc{background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius);padding:24px 22px;}
+  .statc .num{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,40px);color:var(--gold);letter-spacing:-.02em;line-height:1;text-shadow:0 0 24px rgba(231,185,100,.25);}
+  .statc .txt{font-size:14px;color:var(--bone-dim);margin-top:10px;} .statc .txt b{color:#fbf5e8;}
+  .statc .src{display:block;font-size:11px;color:var(--muted);margin-top:12px;}
+  .why-close{margin-top:clamp(26px,4vw,38px);max-width:72ch;font-size:clamp(16px,1.7vw,18px);color:var(--bone-dim);}
+  .why-close b{color:#fbf5e8;}
+
+  /* ===== 8 · PREISE (hell) ===== */
+  .grid-price{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
+  .price{display:flex;flex-direction:column;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:32px 28px;position:relative;transition:transform .25s,box-shadow .25s;}
+  .price:hover{transform:translateY(-4px);box-shadow:var(--shadow-l);}
+  .price.featured{border-color:var(--amber);box-shadow:0 28px 56px -30px rgba(232,146,63,.5);background:linear-gradient(180deg,#fffaf0,#fdf1df);}
+  .price .pill{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-family:var(--display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:var(--amber);color:#2a1808;padding:6px 14px;border-radius:999px;white-space:nowrap;}
+  .price .plan{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);}
+  .price .amount{font-family:var(--display);font-weight:600;font-size:40px;letter-spacing:-.03em;margin-top:12px;color:var(--ink);}
+  .price .amount small{font-size:17px;color:var(--ink-faint);font-weight:500;}
+  .price .care{font-size:14px;color:var(--ink-soft);margin-top:6px;} .price .care b{color:var(--gold-deep);}
+  .price .desc{font-size:14.5px;color:var(--ink-soft);margin-top:16px;padding-bottom:18px;border-bottom:1px solid var(--line-l);}
+  .price ul{list-style:none;margin:18px 0 26px;display:flex;flex-direction:column;gap:11px;flex:1;}
+  .price li{font-size:14.5px;color:var(--ink);display:flex;align-items:flex-start;gap:10px;}
+  .price li svg{flex:none;margin-top:3px;}
+  .price .btn{width:100%;justify-content:center;}
+  .price-note{text-align:center;margin-top:clamp(28px,4vw,40px);max-width:64ch;margin-inline:auto;color:var(--ink-soft);font-size:15px;}
+  .price-note b{color:var(--ink);}
+  .price-fine{text-align:center;margin-top:12px;font-size:12.5px;color:var(--ink-faint);}
+
+  /* ===== 9 · ÜBER UNS (dunkel/intim) ===== */
+  .about .sec-head{max-width:64ch;margin-bottom:0;} .about h2{font-size:clamp(26px,3.8vw,40px);}
+  .team-photo{margin:clamp(28px,4.5vw,44px) 0;}
+  .team-photo img{width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:0 40px 80px -36px rgba(0,0,0,.8);border:1px solid var(--line-d);}
+  .team-photo figcaption{font-family:var(--hand);font-size:21px;color:var(--gold);text-align:center;margin-top:16px;}
+  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .person{background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius);padding:24px;}
+  .person .ic{font-size:24px;line-height:1;margin-bottom:14px;}
+  .person h3{font-size:19px;color:#fbf5e8;}
+  .person .role{display:block;font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.04em;color:var(--gold);margin:4px 0 10px;}
+  .person p{font-size:14.5px;color:var(--bone-dim);} .person p b{color:var(--ember);font-weight:600;}
+  .about .local{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--gold);background:rgba(231,185,100,.1);border:1px solid var(--line-d);padding:8px 15px;border-radius:999px;}
+
+  /* ===== 10 · TEMPO (dunkel) ===== */
+  .tempo{text-align:center;background:var(--night-2);}
+  .tempo h2{font-size:clamp(26px,4vw,42px);margin-top:14px;max-width:18ch;margin-inline:auto;}
+  .tempo p{color:var(--bone-dim);max-width:60ch;margin:18px auto 0;font-size:16.5px;}
+  .stats{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(28px,6vw,72px);margin-top:clamp(36px,5vw,52px);}
+  .stat .big{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.5vw,46px);color:var(--gold);letter-spacing:-.02em;}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:6px;}
+
+  /* ===== 11 · KONTAKT (hell) ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:start;}
+  .card{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:30px 28px;box-shadow:var(--shadow-l);}
+  .card h3{font-size:21px;} .card .sub{color:var(--ink-soft);font-size:15px;margin-top:8px;}
+  .booking .btn{margin-top:22px;width:100%;justify-content:center;}
+  .placeholder-note{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;color:var(--ink-faint);background:var(--sand);border:1px dashed var(--line-l);padding:9px 13px;border-radius:10px;}
+  .or-line{color:var(--ink-soft);font-size:14px;margin-top:18px;}
+  .or-line a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid rgba(199,154,79,.4);}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:15px;}
+  .field label{font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .field input,.field textarea{font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--cream);border:1.5px solid var(--line-l);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s;}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,146,63,.16);}
+  .field textarea{resize:vertical;min-height:96px;}
+  .form .btn{width:100%;justify-content:center;margin-top:4px;}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
+
+  /* ===== 12 · FOOTER ===== */
+  footer{background:#100e08;color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 36px;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
+  .foot-brand .wm{font-size:24px;}
+  .foot-brand .tag{font-family:var(--display);font-size:15px;color:var(--bone);margin-top:12px;}
+  .foot-brand .tag b{color:var(--amber);}
+  .foot-brand .addr{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.7;}
+  .foot-col h4{font-family:var(--display);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;}
+  .foot-col a{display:block;font-size:14.5px;color:var(--bone-dim);padding:5px 0;transition:color .2s;}
+  .foot-col a:hover{color:var(--bone);}
+  .foot-col .todo{font-size:11px;color:var(--muted);}
+  .foot-bottom{margin-top:clamp(36px,5vw,52px);padding-top:24px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);}
+  .foot-bottom .wm{font-size:15px;}
+
+  /* ===== Lech-Welle-Logo, Footer-Skyline & Bayertor-Motiv ===== */
+  .brand{display:inline-flex;align-items:center;gap:10px;}
+  .brand-mark{width:30px;height:30px;color:var(--gold);flex:none;}
+  .foot-logo{display:inline-flex;align-items:center;gap:10px;}
+  .foot-logo .brand-mark{width:27px;height:27px;}
+  .foot-scene{margin-top:clamp(30px,4.5vw,46px);text-align:center;}
+  .foot-scene .scene-svg{width:min(460px,94%);height:auto;color:var(--gold);margin:0 auto;display:block;}
+  .about{position:relative;overflow:hidden;}
+  .about > .wrap{position:relative;z-index:1;}
+  .about-bayertor{position:absolute;right:-6px;bottom:0;width:clamp(170px,24vw,290px);color:var(--gold);opacity:.06;pointer-events:none;z-index:0;}
+  @media (max-width:600px){.about-bayertor{opacity:.04;}}
+
+  /* ===== Reveal & Responsive ===== */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  .skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--amber);color:#2a1808;padding:10px 16px;border-radius:10px;font-weight:600;}
+  .skip:focus{left:16px;}
+  @media (max-width:920px){
+    .nav-links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--night-2);border-bottom:1px solid var(--line-d);padding:10px 6vw 22px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s;}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
+    .nav-links a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line-d);} .nav-links a:not(.btn)::after{display:none;}
+    .nav-links .btn{margin-top:14px;justify-content:center;} .nav-toggle{display:block;}
+    .grid-work,.niche-grid,.grid-price,.steps,.stats-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;} .people{grid-template-columns:1fr;}
+    .foot-top{grid-template-columns:1fr 1fr;} .foot-brand{grid-column:1 / -1;}
+  }
+  @media (max-width:600px){
+    .grid-work,.niche-grid,.grid-price,.steps,.stats-grid{grid-template-columns:1fr;}
+    .responsive-box{flex-direction:column;gap:14px;}
+    .hero-cta{flex-direction:column;align-items:stretch;} .hero-cta .btn{justify-content:center;}
+    .foot-top{grid-template-columns:1fr;} .foot-bottom{flex-direction:column;align-items:flex-start;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;scroll-behavior:auto !important;}.js .reveal{opacity:1;transform:none;transition:none;}}
+  </style>
+</head>
+
+<body id="top">
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <!-- NAV -->
+  <header class="nav">
+    <nav class="wrap nav-in" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Lechcode Startseite">
+        <svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="24" cy="24" r="20.5"/>
+          <path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/>
+          <circle cx="33" cy="13" r="1.9" fill="#e8923f" stroke="none"/>
+        </svg>
+        <span class="wm"><span class="lech">lech</span><span class="code">code</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#arbeiten">Arbeiten</a>
+        <a href="#fuer-wen">Für wen</a>
+        <a href="#preise">Preise</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+        <!-- PLATZHALTER-CAL -->
+        <a class="btn" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">Termin buchen <span class="arr">→</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero dark">
+      <div class="wrap">
+        <span class="eyebrow">Lokale Web-Agentur · Landsberg am Lech</span>
+        <h1>Deine Arbeit hat <span class="soul">Seele</span>.<br><span class="q">Deine Website auch?</span></h1>
+        <p class="hero-sub">Moderne, schnelle Websites aus Landsberg am Lech — fair gemacht, mit Herz. Für Menschen &amp; Unternehmen, die Gutes tun.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#kontakt">Kostenlose Vorschau <span class="arr">→</span></a>
+          <!-- PLATZHALTER-CAL -->
+          <a class="btn btn-ghost" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">Termin buchen</a>
+        </div>
+        <a class="trust" href="https://wairua-spirit.de" target="_blank" rel="noopener"><span class="live-dot"></span> Bereits live: <b style="color:#fff;margin-left:2px;">wairua-spirit.de</b></a>
+      </div>
+    </section>
+
+    <!-- Lech-Welle: dunkel → hell -->
+    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night);">
+      <g class="wave-anim wave-back">
+        <path d="M0 30 q 120 -16 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
+      </g>
+      <g class="wave-anim">
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 L2880 56 L0 56 Z" fill="var(--cream)" stroke="none"/>
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <!-- WEDGE -->
+    <section class="wedge light reveal" id="so-arbeiten">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">So arbeiten wir</span>
+          <h2>Wir kommen nicht mit einem Angebot.<br><span class="gift">Wir kommen mit einem Geschenk.</span></h2>
+          <p class="lead">Bevor wir auch nur über Geld reden, bauen wir dir deine neue Website — vorab, als Vorschau. Du schaust sie dir in Ruhe an. Gefällt sie dir, machen wir weiter. Wenn nicht, hast du eine schöne Idee geschenkt bekommen. Kein Druck, keine Haken.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><h3>Wir bauen vorab</h3><p>Wir schauen uns deine Arbeit an und gestalten deine neue Seite — fertig zum Ansehen, ganz ohne Verpflichtung.</p></div>
+          <div class="step"><div class="num">2</div><h3>Du schaust in Ruhe</h3><p>Du bekommst einen Link zur fertigen Vorschau. Lass sie wirken. Zeig sie, wem du willst. Lass dir Zeit.</p></div>
+          <div class="step"><div class="num">3</div><h3>Dann reden wir</h3><p>Gefällt sie dir, bringen wir sie gemeinsam online — mit echten Texten, Fotos und deiner Domain. Sonst: kein Problem.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="dark reveal" id="arbeiten">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Arbeiten · Vorher / Nachher</span>
+          <h2>Sechs Branchen. Sechs Seelen.</h2>
+          <p class="lead">Jede Seite ist in Stunden entstanden — und fühlt sich trotzdem maßgeschneidert an. Kein Template von der Stange. Klick dich rein.</p>
+        </div>
+        <div class="grid-work">
+          <a class="work" href="https://wairua-spirit.de" target="_blank" rel="noopener" style="--c-1:#e7b964;">
+            <div class="work-canvas"><span class="badge-live"><span class="live-dot"></span> LIVE</span><span class="tag">Wildnis · Spiritualität</span><span class="head">Zurück zu deiner wahren Natur.</span><div class="swatches"><i style="background:#0c0e0b;border:1px solid #4a4332"></i><i style="background:#d8a85a"></i><i style="background:#8a9a6b"></i></div></div>
+            <div class="work-meta"><span class="name">wairua</span><span class="go">Live ansehen →</span></div>
+          </a>
+          <a class="work" style="--c-1:#8aa86a;">
+            <div class="work-canvas"><span class="tag">Heilpraktikerin · TCM</span><span class="head">Heilung, die den ganzen Menschen sieht.</span><div class="swatches"><i style="background:#6f8a6a"></i><i style="background:#bd7b54"></i><i style="background:#e3ecdd"></i></div></div>
+            <div class="work-meta"><span class="name">Anne Robert</span><span class="go">Vorschau auf Anfrage</span></div>
+          </a>
+          <a class="work" style="--c-1:#5e9a93;">
+            <div class="work-canvas"><span class="tag">Psychotherapie · Trauma</span><span class="head">Ein sicherer Ort, um wieder bei dir anzukommen.</span><div class="swatches"><i style="background:#2f5d62"></i><i style="background:#c79a5b"></i><i style="background:#d8e5e3"></i></div></div>
+            <div class="work-meta"><span class="name">Philipp Märkle</span><span class="go">Vorschau auf Anfrage</span></div>
+          </a>
+          <a class="work" style="--c-1:#d99a86;">
+            <div class="work-canvas"><span class="tag">Hebamme · Geburt</span><span class="head">Begleitung — weit über die Geburt hinaus.</span><div class="swatches"><i style="background:#cf8d77"></i><i style="background:#9bae93"></i><i style="background:#f6dccf"></i></div></div>
+            <div class="work-meta"><span class="name">Vesna Pazin</span><span class="go">Vorschau auf Anfrage</span></div>
+          </a>
+          <a class="work" style="--c-1:#9aa860;">
+            <div class="work-canvas"><span class="tag">Bio-Hofladen · Regional</span><span class="head">Ehrlich. Regional. Direkt vom Hof.</span><div class="swatches"><i style="background:#5b7a3f"></i><i style="background:#cf9a3c"></i><i style="background:#dde7c8"></i></div></div>
+            <div class="work-meta"><span class="name">Hofladen Dürr</span><span class="go">Vorschau auf Anfrage</span></div>
+          </a>
+          <a class="work" style="--c-1:#9aa860;">
+            <div class="work-canvas"><span class="tag">Unverpackt · Zero Waste</span><span class="head">Einkaufen ohne Müll — mitten in Landsberg.</span><div class="swatches"><i style="background:#6f8f5a"></i><i style="background:#c2a06a"></i><i style="background:#e0ead4"></i></div></div>
+            <div class="work-meta"><span class="name">ULA Unverpackt</span><span class="go">Vorschau auf Anfrage</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÜR WEN -->
+    <section class="light sand reveal" id="fuer-wen">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Für wen wir bauen</span>
+          <h2>Für Menschen, die Gutes tun.</h2>
+          <p class="lead">Wir bauen bewusst für eine bestimmte Sorte Unternehmen: solche, die heilen, stärken und verbinden. Wo dein Herz schlägt, fühlen wir uns zu Hause.</p>
+        </div>
+        <div class="niche-grid">
+          <div class="niche-card"><div class="ic">🌿</div><h3>Gesundheit &amp; Naturheilkunde</h3><p>Heilpraktiker·innen, TCM, Physio, Ernährungsberatung.</p></div>
+          <div class="niche-card"><div class="ic">🧘</div><h3>Bewusstsein &amp; Achtsamkeit</h3><p>Yoga, Meditation, Atemarbeit, Retreats.</p></div>
+          <div class="niche-card"><div class="ic">💬</div><h3>Coaching &amp; Therapie</h3><p>Coaches, Psychotherapie (HPG), Begleitung, Supervision.</p></div>
+          <div class="niche-card"><div class="ic">🤲</div><h3>Geburt &amp; Familie</h3><p>Hebammen, Doulas, Familienbegleitung.</p></div>
+          <div class="niche-card"><div class="ic">🌾</div><h3>Nachhaltigkeit &amp; Bio</h3><p>Hofläden, Unverpackt, regionale Erzeuger.</p></div>
+          <div class="niche-card"><div class="ic">✨</div><h3>… und Herzensprojekte</h3><p>Du tust Gutes und passt nicht ins Raster? Schreib uns trotzdem.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARUM -->
+    <section class="why dark reveal" id="warum">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Warum es sich lohnt</span>
+          <h2>Deine Website arbeitet — auch wenn du schläfst.</h2>
+          <p class="lead">Eine gute Seite ist heute oft der erste Eindruck, den Menschen von dir bekommen — noch vor dem ersten Gespräch. Und immer öfter passiert dieser erste Eindruck am Handy.</p>
+        </div>
+        <div class="responsive-box">
+          <div class="devs">📱 💻</div>
+          <div><h3>Was heißt eigentlich „responsive"?</h3><p>Ganz einfach: Deine Seite <b>passt sich automatisch an jedes Gerät an</b> — am Handy, am Tablet und am großen Bildschirm sieht sie immer perfekt aus und lässt sich bequem bedienen. Kein Zoomen, kein Verrutschen, nichts Abgeschnittenes. Genau so bauen wir jede Seite.</p></div>
+        </div>
+        <div class="stats-grid">
+          <div class="statc"><div class="num">über 60 %</div><p class="txt">aller Website-Aufrufe weltweit kommen heute vom Smartphone — deine Seite muss am Handy überzeugen.</p><span class="src">Quelle: StatCounter, 2024/25</span></div>
+          <div class="statc"><div class="num">76 %</div><p class="txt">wer am Handy lokal sucht („… in der Nähe"), besucht noch <b>am selben Tag</b> ein passendes Geschäft.</p><span class="src">Quelle: Google</span></div>
+          <div class="statc"><div class="num">0,05 Sek.</div><p class="txt">so schnell entscheiden Besucher, ob sie deiner Seite — und damit dir — vertrauen.</p><span class="src">Quelle: Studie, Lindgaard et al.</span></div>
+          <div class="statc"><div class="num">75 %</div><p class="txt">beurteilen die Glaubwürdigkeit eines Unternehmens allein anhand seiner Website.</p><span class="src">Quelle: Stanford</span></div>
+        </div>
+        <p class="why-close">Für dich als Selbstständige:n heißt das ganz konkret: Eine moderne, mobile Seite macht dich <b>auffindbar</b>, schafft in Sekunden <b>Vertrauen</b> — und nimmt dir Arbeit ab, indem sie rund um die Uhr Anfragen und Termine entgegennimmt. Sie arbeitet für dich, während du bei deinen Kund·innen bist.</p>
+      </div>
+    </section>
+
+    <!-- Lech-Welle: dunkel → hell -->
+    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night);">
+      <g class="wave-anim wave-back">
+        <path d="M0 30 q 120 -16 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
+      </g>
+      <g class="wave-anim">
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 L2880 56 L0 56 Z" fill="var(--cream)" stroke="none"/>
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <!-- PREISE -->
+    <section class="light reveal" id="preise">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Preise</span>
+          <h2>Faire Preise. Ohne Kleingedrucktes.</h2>
+          <p class="lead">Ein fairer Festpreis fürs Bauen, eine kleine Pauschale für die Pflege. Hosting, SSL, kleine Änderungen, immer aktuell — wir kümmern uns, du musst nie wieder selbst ran.</p>
+        </div>
+        <div class="grid-price">
+          <div class="price">
+            <span class="plan">Starter</span>
+            <div class="amount">690 €<small> einmalig</small></div>
+            <div class="care">+ <b>19 €</b> / Monat Pflege</div>
+            <p class="desc">Die moderne One-Page-Seite. Perfekt für den klaren, schönen Start.</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Eine starke Seite, voll responsive</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Kontakt &amp; Terminbuchung</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> HTTPS, schnell &amp; sicher</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Design passend zu deiner Nische</li>
+            </ul>
+            <a class="btn btn-ghost" href="#kontakt">Vorschau anfragen</a>
+          </div>
+          <div class="price featured">
+            <span class="pill">Beliebt</span>
+            <span class="plan">Praxis</span>
+            <div class="amount">1.200 €<small> einmalig</small></div>
+            <div class="care">+ <b>29 €</b> / Monat Pflege</div>
+            <p class="desc">Mehrseitig &amp; gefunden werden. Für Praxen und Läden, die wachsen wollen.</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mehrere Unterseiten</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Buchung &amp; Galerie</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> SEO-Basis fürs Google-Ranking</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Google-Unternehmensprofil</li>
+            </ul>
+            <a class="btn" href="#kontakt">Vorschau anfragen <span class="arr">→</span></a>
+          </div>
+          <div class="price">
+            <span class="plan">Premium</span>
+            <div class="amount">ab 1.900 €<small> einmalig</small></div>
+            <div class="care">+ <b>39 €</b> / Monat Pflege</div>
+            <p class="desc">Das volle Programm. Wenn deine Seite richtig arbeiten soll.</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Alles aus „Praxis", plus:</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Blog, Shop oder Mehrsprachigkeit</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Foto-Vermittlung vor Ort</li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> KI-Buchungs- &amp; Chat-Assistent</li>
+            </ul>
+            <a class="btn btn-ghost" href="#kontakt">Gespräch vereinbaren</a>
+          </div>
+        </div>
+        <p class="price-note"><b>Die monatliche Pflege ist kein Abo-Trick.</b> Sie hält deine Seite sicher, schnell und aktuell — Updates, kleine Änderungen, Hosting, SSL. Du hast den Kopf frei für deine Arbeit.</p>
+        <p class="price-fine">Domain (~12 €/Jahr) separat · keine versteckten Kosten · jederzeit kündbar</p>
+      </div>
+    </section>
+
+    <!-- ÜBER UNS -->
+    <section class="about dark reveal" id="ueber-uns">
+      <!-- leises Bayertor-Motiv (Landsberg-Wahrzeichen) -->
+      <svg class="about-bayertor" viewBox="0 0 110 152" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 70 L30 28 L42 70"/><path d="M19 70 V152 H41 V70"/>
+        <path d="M68 70 L80 28 L92 70"/><path d="M69 70 V152 H91 V70"/>
+        <path d="M40 18 V152 H70 V18"/>
+        <path d="M40 18 V8 H45 V18 H51 V8 H59 V18 H65 V8 H70 V18"/>
+        <circle cx="55" cy="46" r="7"/>
+        <path d="M44 84 Q55 64 66 84 V120 H44 Z"/>
+        <path d="M30 120 H80 V152 H30"/>
+        <path d="M46 152 V132 a9 9 0 0 1 18 0 V152"/>
+      </svg>
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Über uns</span>
+          <h2>Drei aus Landsberg.<br>Mit Hand und Herz.</h2>
+          <p class="lead">Wir sind Lenny, Marie &amp; Michael — drei Menschen aus Landsberg am Lech, die moderne Technik und echte Werte zusammenbringen.</p>
+          <p class="lead" style="margin-top:14px;">Eigentlich machen wir hauptberuflich etwas ganz anderes — jede:r von uns in einer Arbeit, die Menschen stärkt. Doch als wir erlebt haben, was mit KI heute möglich ist (moderne Websites in Tagen statt Monaten), hat es uns gepackt: Diese Technik, kombiniert mit unserer Liebe zu Landsberg und zu genau diesen sinnstiftenden Branchen, hat uns zu Lechcode geführt.</p>
+          <p class="lead" style="margin-top:14px;">Lokal verwurzelt, persönlich erreichbar — bei uns sitzt kein Callcenter zwischen dir und deiner Seite. Du redest mit den Menschen, die sie auch bauen.</p>
+        </div>
+        <figure class="team-photo">
+          <img src="assets/team.jpg" width="1600" height="1068" loading="lazy" alt="Lenny, Marie und Michael von Lechcode, sitzend vor einer Holzwand" />
+          <figcaption>Lenny · Marie · Michael — Landsberg am Lech</figcaption>
+        </figure>
+        <div class="people">
+          <div class="person"><div class="ic">💻</div><h3>Lenny</h3><span class="role">Technik &amp; Umsetzung</span><p>Begleitet hauptberuflich Menschen mit <b>Coming Home</b>. Bei Lechcode kümmert er sich ums Technische — baut die Seiten und hält alles schnell, sicher und aktuell.</p></div>
+          <div class="person"><div class="ic">💛</div><h3>Marie</h3><span class="role">Seele &amp; Liebe im Design</span><p>Arbeitet mit Körper, Atem und Herz (<b>Coming Home</b>). Genau dieses Gespür bringt sie ins Design — damit deine Seite sich anfühlt wie du, nicht wie eine Vorlage.</p></div>
+          <div class="person"><div class="ic">🤝</div><h3>Michael</h3><span class="role">Kundenkontakt</span><p>Hat 2020 die Konzernwelt verlassen, die Welt bereist und führt heute mit <b>wairua</b> Menschen zurück in die Natur. Dein herzlicher, direkter Draht zu uns.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:clamp(26px,4vw,36px);"><span class="local">📍 Landsberg am Lech &amp; Umgebung</span></div>
+      </div>
+    </section>
+
+    <!-- TEMPO -->
+    <section class="tempo dark reveal">
+      <div class="wrap">
+        <span class="eyebrow" style="justify-content:center;">Unser Tempo</span>
+        <h2>In Tagen statt Monaten.</h2>
+        <p>Wir nutzen KI als Werkzeug — nicht als Gimmick. Sie nimmt uns die Fleißarbeit ab, damit wir Zeit haben für das, was zählt: Gespräch, Gespür, Feinschliff. Für dich heißt das: deine Seite ist schnell fertig — ohne Abstriche bei der Sorgfalt.</p>
+        <div class="stats">
+          <div class="stat"><div class="big">&lt; 1 Tag</div><div class="lbl">Go-Live (bewiesen)</div></div>
+          <div class="stat"><div class="big">Tage</div><div class="lbl">statt Monate bis fertig</div></div>
+          <div class="stat"><div class="big">100 %</div><div class="lbl">responsive &amp; sicher</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lech-Welle: dunkel → hell -->
+    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night-2);">
+      <g class="wave-anim wave-back">
+        <path d="M0 30 q 120 -16 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
+      </g>
+      <g class="wave-anim">
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 L2880 56 L0 56 Z" fill="var(--cream)" stroke="none"/>
+        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+
+    <!-- KONTAKT -->
+    <section class="light reveal" id="kontakt">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Lass uns reden — oder lass dich überraschen.</h2>
+          <p class="lead">Buch dir einen unverbindlichen 15-Minuten-Call, oder schreib uns kurz, was du machst. Den Rest übernehmen wir.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card booking">
+            <h3>15-Minuten-Call</h3>
+            <p class="sub">Locker, kostenlos, auf Augenhöhe. Wir lernen uns kennen und schauen, ob's passt.</p>
+            <!-- PLATZHALTER-CAL -->
+            <a class="btn" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">Termin buchen <span class="arr">→</span></a>
+            <div class="placeholder-note">🔧 Platzhalter — Cal.com-Buchung kommt, sobald das Konto steht.</div>
+            <p class="or-line">Lieber direkt? <a href="mailto:hallo@lechcode.de">hallo@lechcode.de</a></p>
+          </div>
+          <div class="card">
+            <h3>Kostenlose Vorschau anfragen</h3>
+            <p class="sub" style="margin-bottom:20px;">Erzähl uns kurz von dir — wir melden uns persönlich.</p>
+            <!-- PLATZHALTER-FORM: Web3Forms-Key einsetzen (kostenlos auf web3forms.com). Bis dahin sendet das Formular nicht. -->
+            <form class="form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY">
+              <input type="hidden" name="subject" value="Neue Anfrage über lechcode.de">
+              <input type="hidden" name="from_name" value="lechcode.de">
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+              <div class="field"><label for="name">Name</label><input id="name" type="text" name="name" required placeholder="Wie heißt du?"></div>
+              <div class="field"><label for="email">E-Mail</label><input id="email" type="email" name="email" required placeholder="für unsere Antwort"></div>
+              <div class="field"><label for="biz">Was machst du? (gern mit Website-Link)</label><input id="biz" type="text" name="unternehmen" placeholder="z. B. Heilpraxis, Yogastudio, Hofladen …"></div>
+              <div class="field"><label for="msg">Nachricht <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label><textarea id="msg" name="nachricht" placeholder="Worum geht's? Was wünschst du dir?"></textarea></div>
+              <button class="btn" type="submit">Vorschau anfragen <span class="arr">→</span></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-top">
+        <div class="foot-brand">
+          <span class="foot-logo"><svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="20.5"/><path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/><circle cx="33" cy="13" r="1.9" fill="#e8923f" stroke="none"/></svg><span class="wm"><span class="lech">lech</span><span class="code">code</span></span></span>
+          <p class="tag">Code mit <b>Seele</b>.</p>
+          <p class="addr">Lenny, Marie &amp; Michael · Landsberg am Lech<br>hallo@lechcode.de · lechcode.de</p>
+        </div>
+        <div class="foot-col">
+          <h4>Seite</h4>
+          <a href="#arbeiten">Arbeiten</a><a href="#fuer-wen">Für wen</a><a href="#preise">Preise</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="foot-col">
+          <h4>Rechtliches</h4>
+          <!-- TODO: Impressum + Datenschutz anlegen, verlinken, DANN noindex entfernen -->
+          <a href="#">Impressum <span class="todo">· in Arbeit</span></a>
+          <a href="#">Datenschutz <span class="todo">· in Arbeit</span></a>
+          <a href="https://wairua-spirit.de" target="_blank" rel="noopener">Referenz: wairua-spirit.de</a>
+        </div>
+      </div>
+
+      <!-- Landsberg-Skyline: Bayertor · Häuserzeile · Schmalzturm · Mutterturm -->
+      <div class="foot-scene">
+        <svg class="scene-svg" viewBox="0 0 480 192" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" aria-label="Landsberg am Lech — Bayertor, Schmalzturm, Mutterturm">
+          <defs><pattern id="rfg" width="10" height="12" patternUnits="userSpaceOnUse"><path d="M5 0 L10 6 L5 12 L0 6 Z" fill="none" stroke="currentColor" stroke-width="0.8" stroke-opacity=".8"/></pattern></defs>
+          <path d="M21 102 L28 73 L35 102"/><path d="M22 102 V172 H34 V102"/><path d="M28 122 V130"/>
+          <path d="M73 102 L80 73 L87 102"/><path d="M74 102 V172 H86 V102"/><path d="M80 122 V130"/>
+          <path d="M42 50 V172 H66 V50"/><path d="M42 50 V44 H46 V50 H51 V44 H57 V50 H62 V44 H66 V50"/>
+          <circle cx="54" cy="72" r="5"/><path d="M54 72 V68 M54 72 l3 1.5" stroke-width="0.9"/>
+          <path d="M45 106 Q54 92 63 106 V130 H45 Z"/><path d="M48 90 Q54 85 60 90 V96 H48 Z"/>
+          <path d="M28 148 H80 V172 H28"/><path d="M44 172 V158 a10 10 0 0 1 20 0 V172"/><path d="M50 146 h8 v-5 h-8 z"/>
+          <path d="M92 172 V116 L114 98 L136 116 V172 Z"/><path d="M102 136 h9 M119 136 h9 M102 156 h9 M119 156 h9"/>
+          <path d="M136 172 V120 L156 102 L176 120 V172 Z"/><path d="M144 140 h9 M158 140 h9 M144 158 h9 M158 158 h9"/>
+          <path d="M176 172 V122 C176 116 180 114 184 117 C187 110 203 110 206 117 C210 114 214 116 214 122 V172 Z"/><path d="M184 140 h9 M198 140 h9 M184 158 h9 M198 158 h9"/>
+          <path d="M214 84 V172 H274 V84 Z"/><path d="M214 116 H274 M214 144 H274"/>
+          <path d="M234 172 V160 a10 10 0 0 1 20 0 V172"/>
+          <circle cx="244" cy="106" r="9"/><path d="M244 106 V98 M244 106 l5 2.5" stroke-width="0.9"/>
+          <path d="M206 84 L244 16 L282 84 Z" fill="url(#rfg)" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M244 16 V3 M239 16 L244 7 L249 16 M240 8 H248"/><circle cx="244" cy="3" r="1.5"/><path d="M244 7 h6 v3 h-6"/>
+          <path d="M206 84 V75 M203 79 L206 72 L209 79 M282 84 V75 M279 79 L282 72 L285 79"/>
+          <path d="M274 172 V110 H328 V172 Z"/><path d="M272 110 L282 96 H320 L330 110"/><path d="M282 128 h8 M298 128 h8 M312 128 h8 M282 146 h8 M298 146 h8 M312 146 h8 M282 164 h8 M312 164 h8"/>
+          <path d="M328 172 V114 C328 107 333 105 337 108 C340 99 360 99 363 108 C367 105 372 107 372 114 V172 Z"/><path d="M336 130 h9 M352 130 h9 M336 150 h9 M352 150 h9"/>
+          <path d="M382 172 V100 H420 V172"/><path d="M378 100 H424 V90 H378 Z"/><path d="M386 90 h6 M398 90 h6 M410 90 h6"/>
+          <path d="M376 90 L401 54 L426 90 Z"/><path d="M401 54 V48"/><circle cx="401" cy="47" r="1.5"/>
+          <path d="M395 172 V162 a6 6 0 0 1 12 0 V172"/><path d="M401 116 V124 M401 138 V146"/>
+          <path d="M14 172 H440" stroke="#e8923f" stroke-width="2"/>
+          <path d="M372 178 c 8 -4, 16 4, 29 0 s 21 -4, 29 0" stroke="#9fd4cb" stroke-opacity=".55" stroke-width="1.3"/>
+        </svg>
+      </div>
+
+      <div class="foot-bottom">
+        <span>© 2026 <span class="wm" style="vertical-align:-2px;"><span class="lech">lech</span><span class="code">code</span></span> · Landsberg am Lech</span>
+        <span class="hand" style="font-family:var(--hand);font-size:18px;color:var(--gold);">mit Liebe gebaut</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var toggle=document.querySelector('.nav-toggle'),links=document.getElementById('nav-links');
+    if(!toggle||!links)return;
+    toggle.addEventListener('click',function(){var o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false');toggle.setAttribute('aria-label',o?'Menü schließen':'Menü öffnen');});
+    links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
+  })();
+  (function(){
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,els=document.querySelectorAll('.reveal');
+    function reveal(el){if(el)el.classList.add('in');}
+    if(reduce||!('IntersectionObserver' in window)){els.forEach(reveal);return;}
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0){reveal(el);io.unobserve(el);}});
+    function revealHash(){if(location.hash)reveal(document.querySelector(location.hash));}
+    window.addEventListener('hashchange',revealHash);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){reveal(document.querySelector(a.getAttribute('href')));});});
+    revealHash();
+  })();
+  </script>
+</body>
+</html>
