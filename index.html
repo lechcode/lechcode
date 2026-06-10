@@ -5,11 +5,9 @@
   ║  Stil: „Warm-dunkel / Lagerfeuer" (Richtung 3, vom Team gewählt) ║
   ║  Single-File, kein Build. Von & für Lenny, Marie & Michael.      ║
   ╠══════════════════════════════════════════════════════════════════╣
-  ║  ⚠ VOR GOOGLE-GO-LIVE:                                            ║
-  ║   1) Impressum + Datenschutz anlegen & verlinken (Footer)         ║
-  ║   2) <meta name="robots" content="noindex"> ENTFERNEN            ║
-  ║   3) Cal.com-Link einsetzen  (Suche: PLATZHALTER-CAL)           ║
-  ║   4) Web3Forms-Key einsetzen (Suche: PLATZHALTER-FORM)          ║
+  ║  ⚠ VOR GOOGLE-GO-LIVE (Stand 2026-06-10):
+  ║   • erledigt: Impressum+Datenschutz verlinkt, Cal.com raus, Fonts lokal
+  ║   • offen: Web3Forms-Key (Suche: PLATZHALTER-FORM) -> dann noindex raus
   ╚══════════════════════════════════════════════════════════════════╝
 -->
 <html lang="de">
@@ -23,9 +21,8 @@
   <meta name="description" content="Lechcode — moderne, schnelle Websites aus Landsberg am Lech. Für Menschen & Unternehmen, die Gutes tun: Gesundheit, Coaching, Achtsamkeit, Naturheilkunde, Nachhaltigkeit. Wir bauen deine Seite vorab — als Geschenk." />
   <meta name="theme-color" content="#16130c" />
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTUnIGZpbGw9JyMxZjFiMTInLz48Y2lyY2xlIGN4PSczMicgY3k9JzMyJyByPScyMi41JyBmaWxsPSdub25lJyBzdHJva2U9JyNlN2I5NjQnIHN0cm9rZS13aWR0aD0nMy40Jy8+PHBhdGggZD0nTTE1IDM2IEMgMjIgMjgsIDI5IDI4LCAzMyAzNCBDIDM3IDQwLCA0NCA0MCwgNTAgMzEnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2U3Yjk2NCcgc3Ryb2tlLXdpZHRoPSc0LjInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxjaXJjbGUgY3g9JzQ0JyBjeT0nMTguNScgcj0nMy40JyBmaWxsPScjZTg5MjNmJy8+PC9zdmc+" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Schriften lokal gehostet (DSGVO: keine Verbindung zu Google Fonts) -->
+  <link rel="stylesheet" href="assets/fonts.css">
   <style>
   /* ===== 1 · TOKENS — warme Lagerfeuer-Palette ===== */
   :root{
@@ -434,8 +431,7 @@
         <a href="#preise">Preise</a>
         <a href="#ueber-uns">Über uns</a>
         <a href="#kontakt">Kontakt</a>
-        <!-- PLATZHALTER-CAL -->
-        <a class="btn" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">Termin buchen <span class="arr">→</span></a>
+        <a class="btn" href="#kontakt">Vorschau holen <span class="arr">→</span></a>
       </div>
     </nav>
   </header>
@@ -451,8 +447,7 @@
             <p class="hero-sub">Wir bauen moderne, schnelle Websites aus Landsberg am Lech — für Menschen, die Gutes tun. Fair, persönlich, mit Herz. Und das Schönste: Deine fertige Seite siehst du, bevor wir über Geld reden.</p>
             <div class="hero-cta">
               <a class="btn" href="#kontakt">Kostenlose Vorschau <span class="arr">→</span></a>
-              <!-- PLATZHALTER-CAL -->
-              <a class="btn btn-ghost" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">15-Minuten-Call</a>
+              <a class="btn btn-ghost" href="mailto:hallo@lechcode.de">Lieber direkt schreiben</a>
             </div>
             <div class="hero-trust">
               <a class="trust" href="https://wairua-spirit.de" target="_blank" rel="noopener"><span class="live-dot"></span> Schon live: <b style="color:#fff;margin-left:2px;">wairua-spirit.de</b></a>
@@ -691,16 +686,14 @@
         <div class="sec-head">
           <span class="eyebrow">Sag einfach Hallo</span>
           <h2>Schreib uns — oder lass dich überraschen.</h2>
-          <p class="lead">Zwei Wege, ganz ohne Druck: Frag dir deine kostenlose Vorschau an — oder buch dir einen lockeren 15-Minuten-Call, in dem wir uns einfach kennenlernen. Du musst nichts vorbereiten. Den Rest übernehmen wir.</p>
+          <p class="lead">Erzähl uns in zwei, drei Sätzen, was du machst — wir bauen dir deine Vorschau und melden uns persönlich. Ganz ohne Druck, ohne Callcenter, ohne Kleingedrucktes.</p>
         </div>
         <div class="contact-grid">
           <div class="card booking">
-            <h3>15-Minuten-Call</h3>
-            <p class="sub">Locker, kostenlos, auf Augenhöhe. Kein Verkaufsgespräch — wir schauen einfach, ob's zwischen uns passt.</p>
-            <!-- PLATZHALTER-CAL -->
-            <a class="btn btn-ghost" href="https://cal.com/lechcode/kennenlernen" target="_blank" rel="noopener">Termin buchen <span class="arr">→</span></a>
-            <div class="placeholder-note">🔧 Platzhalter — die Online-Buchung kommt, sobald unser Kalender steht. Bis dahin erreichst du uns direkt per Mail.</div>
-            <p class="or-line">Lieber per Mail? <a href="mailto:hallo@lechcode.de">hallo@lechcode.de</a></p>
+            <h3>Lieber direkt?</h3>
+            <p class="sub">Kein Formular-Zwang, kein Callcenter. Schreib uns einfach eine Mail — es antwortet ein echter Mensch aus Landsberg, meist noch am selben Tag.</p>
+            <a class="btn btn-ghost" href="mailto:hallo@lechcode.de">hallo@lechcode.de <span class="arr">→</span></a>
+            <p class="or-line">Schon live für eine Kundin: <a href="https://wairua-spirit.de" target="_blank" rel="noopener">wairua-spirit.de</a></p>
           </div>
           <div class="card">
             <h3>Kostenlose Vorschau anfragen</h3>
@@ -738,9 +731,8 @@
         </div>
         <div class="foot-col">
           <h4>Rechtliches</h4>
-          <!-- TODO: Impressum + Datenschutz anlegen, verlinken, DANN noindex entfernen -->
-          <a href="#">Impressum <span class="todo">· in Arbeit</span></a>
-          <a href="#">Datenschutz <span class="todo">· in Arbeit</span></a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
           <a href="https://wairua-spirit.de" target="_blank" rel="noopener">Referenz: wairua-spirit.de</a>
         </div>
       </div>
