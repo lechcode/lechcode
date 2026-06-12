@@ -30,10 +30,9 @@ Eine Datei pro Seite, **kein Build** (kein npm/Vite). Einfach `index.html` im Br
 
 ## ⚠ Offene Punkte (vor Versand ins Netzwerk)
 1. **Video einsetzen** — Suche `PLATZHALTER-VIDEO` (lokales MP4 ≤ 15 MB, cookiefrei; kein YouTube-Embed ohne Zwei-Klick). Drehbuch: `landsberg-web-agentur/marketing/video-skript-landingpage.md`.
-2. **Formular-Empfänger auf info@lechcode.de umstellen** — Web3Forms-Key ist aktiv (Form „Lechcode Landingpage", end-to-end getestet 12.06.); Anfragen landen vorerst bei **info@coming-home.now**. Sobald die Bestätigungs-Mail in info@lechcode.de geklickt ist: app.web3forms.com → Form Settings → Empfänger wechseln.
-3. Erst danach: `noindex` auf allen Seiten gleichzeitig raus (Google-Go-Live).
+2. Erst danach: `noindex` auf allen Seiten gleichzeitig raus (Google-Go-Live).
 
-✓ Erledigt (12.06.): Web3Forms-Key live · Postfach info@lechcode.de existiert · AGB von Lenny freigegeben.
+✓ Erledigt (12.06.): **Formular komplett scharf** — Web3Forms-Form „Lechcode Landingpage" (in Lennys Web3Forms-Konto, Free-Plan: 250 Subm./Monat geteilt mit Coming-Home-Form, Submissions 30 Tage im Dashboard einsehbar), Empfänger **info@lechcode.de** (verifiziert), zweifach end-to-end getestet · Postfach existiert · AGB freigegeben.
 
 ## Arbeitsweise & QA
 - Änderungen direkt in den HTML-Dateien; im Browser hart neu laden (Cmd+Shift+R).
