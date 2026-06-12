@@ -7,9 +7,9 @@
   ╠══════════════════════════════════════════════════════════════════╣
   ║  ⚠ OFFEN (vor Versand ins Netzwerk):
   ║   • VIDEO einsetzen — Suche: PLATZHALTER-VIDEO
-  ║   • Web3Forms-Key einsetzen — Suche: PLATZHALTER-FORM
-  ║     (bis dahin öffnet das Formular eine fertige E-Mail — sendet also trotzdem!)
-  ║   • Postfach info@lechcode.de anlegen/weiterleiten (sonst bouncen Mails!)
+  ║   • Formular-Empfänger auf info@lechcode.de umstellen (Web3Forms → Linked Emails),
+  ║     bis dahin landen Anfragen bei info@coming-home.now
+  ║   • ✓ erledigt (12.06.): Web3Forms-Key aktiv · Postfach info@lechcode.de existiert · AGB freigegeben
   ║  ⚠ VOR GOOGLE-GO-LIVE: noindex raus (erst wenn alles oben erledigt).
   ╚══════════════════════════════════════════════════════════════════╝
 -->
@@ -365,7 +365,7 @@
       <div class="wrap">
         <span class="eyebrow">Web-Agentur aus Landsberg am Lech · Code mit Seele</span>
         <h1>Deine neue Website.<br><span class="q">Morgen schon zum Ansehen.</span></h1>
-        <p class="hero-sub">Trag dich unten ein — innerhalb von 24 Stunden liegt der erste, fertig gestaltete Entwurf deiner neuen Seite in deinem Postfach. Kostenlos, unverbindlich, mit Seele gebaut.</p>
+        <p class="hero-sub">Du machst wertvolle Arbeit und willst dich um Menschen kümmern — nicht um Technik-Kram. Genau dafür sind wir da: Trag dich unten ein, und innerhalb von 24 Stunden liegt der erste fertige Entwurf deiner neuen Seite in deinem Postfach. Kostenlos, unverbindlich, mit Seele gebaut.</p>
 
         <!-- ████ PLATZHALTER-VIDEO ████
              Sobald das Video gedreht ist, diesen .video-frame-Block ersetzen durch:
@@ -419,7 +419,7 @@
         <div class="sec-head">
           <span class="eyebrow">Zum Start von Lechcode</span>
           <h2>Die ersten 10 Websites: einmalig 500&nbsp;€. Alles drin.</h2>
-          <p class="lead">Wir kennen es selbst: Eine Website kostet schnell vierstellig, dauert Monate — und am Ende traut man sich kaum, eine Änderung anzufragen. Das wollten wir anders machen. Zum Start vergeben wir die ersten zehn Seiten zum Kennenlern-Preis — damit du siehst, was heute möglich ist.</p>
+          <p class="lead">Wir kennen es selbst: Eine Website kostet schnell vierstellig, dauert Monate — und am Ende traut man sich kaum, eine Änderung anzufragen. Das wollten wir anders machen — für Menschen, deren Arbeit anderen guttut und die ihre Energie lieber dort einsetzen als im Technik-Dschungel. Zum Start vergeben wir die ersten zehn Seiten zum Kennenlern-Preis — damit du siehst, was heute möglich ist.</p>
         </div>
         <div class="offer-grid">
           <div class="price">
@@ -488,7 +488,7 @@
         <div class="sec-head" style="margin-bottom:0;">
           <span class="eyebrow">Wer wir sind</span>
           <h2>Zwei aus Landsberg. Und eine Software mit Seele.</h2>
-          <p class="lead">Wir sind Lenny und Michael — und wir kennen den Website-Schmerz aus eigener Erfahrung: teuer, zäh, und jede kleine Änderung dauert wieder Wochen. Genau deshalb hat Lenny eine eigene KI-Software gebaut. Sie schaut sich deine bestehende Seite an, recherchiert die besten Websites deiner Branche weltweit — und gestaltet daraus deine neue. Und dann kommen wir: zwei Menschen, die zuhören, drüberschauen und den Feinschliff machen.</p>
+          <p class="lead">Wir sind Lenny und Michael — und wir kennen den Website-Schmerz aus eigener Erfahrung: teuer, zäh, und jede kleine Änderung dauert wieder Wochen. Genau deshalb hat Lenny eine eigene KI-Software gebaut. Sie schaut sich deine bestehende Seite an, recherchiert die besten Websites deiner Branche weltweit — und gestaltet daraus deine neue. Und dann kommen wir: zwei Menschen, die zuhören, drüberschauen und den Feinschliff machen. Damit deine Zeit dahin geht, wo sie hingehört — zu den Menschen, denen deine Arbeit guttut.</p>
         </div>
         <div class="people stagger">
           <div class="person"><div class="ic">💻</div><h3>Lenny</h3><span class="role">Technik &amp; KI</span><p>Hat die Lechcode-Software gebaut und führt sie. Baut deine Seite, hält sie schnell, sicher und aktuell — du musst dich um nichts davon kümmern. Hauptberuflich begleitet er Menschen mit <b>Coming Home</b>.</p></div>
@@ -521,10 +521,11 @@
           <div class="card">
             <h3>Deine neue Website anstoßen</h3>
             <p class="sub" style="margin-bottom:var(--space-3);">Kostenlos &amp; unverbindlich — du entscheidest erst, wenn du den Entwurf gesehen hast.</p>
-            <!-- PLATZHALTER-FORM: Web3Forms-Key einsetzen (kostenlos auf web3forms.com).
-                 Bis dahin öffnet das Formular automatisch eine fertige E-Mail an info@lechcode.de — es geht also nichts verloren. -->
+            <!-- Web3Forms aktiv (Form „Lechcode Landingpage" in Lennys Web3Forms-Konto).
+                 Empfänger aktuell info@coming-home.now (Free-Plan, verifizierte Adresse) —
+                 Umstellung auf info@lechcode.de: app.web3forms.com → Linked Emails verifizieren → Form-Empfänger wechseln. -->
             <form class="form" id="anfrage-form" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY">
+              <input type="hidden" name="access_key" value="fe4340bb-771e-4142-8c26-59970049ead1">
               <input type="hidden" name="subject" value="🌊 Neue Website-Anfrage über lechcode.de">
               <input type="hidden" name="from_name" value="lechcode.de">
               <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
