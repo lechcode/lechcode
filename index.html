@@ -2,23 +2,32 @@
 <!--
   ╔══════════════════════════════════════════════════════════════════╗
   ║  LECHCODE — Agentur-Landingpage  ·  „Code mit Seele."             ║
-  ║  Stil: „Warm-dunkel / Lagerfeuer" (Richtung 3, vom Team gewählt) ║
-  ║  Single-File, kein Build. Von & für Lenny, Marie & Michael.      ║
+  ║  Stil: „Warm-dunkel / Lagerfeuer" · Single-File, kein Build.      ║
+  ║  Stand 2026-06-12: Kurz-Version fürs Netzwerk — Startangebot.     ║
   ╠══════════════════════════════════════════════════════════════════╣
-  ║  ⚠ VOR GOOGLE-GO-LIVE (Stand 2026-06-10):
-  ║   • erledigt: Impressum+Datenschutz verlinkt, Cal.com raus, Fonts lokal
-  ║   • offen: Web3Forms-Key (Suche: PLATZHALTER-FORM) -> dann noindex raus
+  ║  ⚠ OFFEN (vor Versand ins Netzwerk):
+  ║   • VIDEO einsetzen — Suche: PLATZHALTER-VIDEO
+  ║   • Web3Forms-Key einsetzen — Suche: PLATZHALTER-FORM
+  ║     (bis dahin öffnet das Formular eine fertige E-Mail — sendet also trotzdem!)
+  ║   • Postfach info@lechcode.de anlegen/weiterleiten (sonst bouncen Mails!)
+  ║  ⚠ VOR GOOGLE-GO-LIVE: noindex raus (erst wenn alles oben erledigt).
   ╚══════════════════════════════════════════════════════════════════╝
 -->
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.classList.add('js');</script>
-  <!-- ⚠ NOINDEX bleibt, bis Impressum + Datenschutz live sind. -->
+  <script>document.documentElement.classList.add('js');if(location.search.indexOf('foto')>-1)document.documentElement.classList.add('foto');</script>
+  <!-- ⚠ NOINDEX bleibt, bis Video + Formular-Key + Postfach stehen. -->
   <meta name="robots" content="noindex, nofollow" />
-  <title>Lechcode · Websites mit Seele aus Landsberg am Lech</title>
-  <meta name="description" content="Lechcode — moderne, schnelle Websites aus Landsberg am Lech. Für Menschen & Unternehmen, die Gutes tun: Gesundheit, Coaching, Achtsamkeit, Naturheilkunde, Nachhaltigkeit. Wir bauen deine Seite vorab — als Geschenk." />
+  <title>Lechcode · Deine neue Website — in 24 Stunden zum Ansehen</title>
+  <meta name="description" content="Startangebot aus Landsberg am Lech: Die ersten 10 Websites für einmalig 500 € — erster Entwurf in 24 Stunden, Umzug inklusive. Modern, schnell, mit Seele." />
+  <meta property="og:title" content="Lechcode · Deine neue Website — in 24 Stunden zum Ansehen" />
+  <meta property="og:description" content="Startangebot: Die ersten 10 Websites für einmalig 500 €. Erster Entwurf in 24 h, kostenlos & unverbindlich — danach Umzug inklusive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://lechcode.de/" />
+  <meta property="og:image" content="https://lechcode.de/assets/og.jpg" />
   <meta name="theme-color" content="#16130c" />
   <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTUnIGZpbGw9JyMxZjFiMTInLz48Y2lyY2xlIGN4PSczMicgY3k9JzMyJyByPScyMi41JyBmaWxsPSdub25lJyBzdHJva2U9JyNlN2I5NjQnIHN0cm9rZS13aWR0aD0nMy40Jy8+PHBhdGggZD0nTTE1IDM2IEMgMjIgMjgsIDI5IDI4LCAzMyAzNCBDIDM3IDQwLCA0NCA0MCwgNTAgMzEnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2U3Yjk2NCcgc3Ryb2tlLXdpZHRoPSc0LjInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxjaXJjbGUgY3g9JzQ0JyBjeT0nMTguNScgcj0nMy40JyBmaWxsPScjZTg5MjNmJy8+PC9zdmc+" />
   <!-- Schriften lokal gehostet (DSGVO: keine Verbindung zu Google Fonts) -->
@@ -39,10 +48,8 @@
     --sans:"Inter",-apple-system,sans-serif; --hand:"Caveat",cursive;
     --radius:18px; --radius-lg:24px;
     --nav-h:68px;
-    --shadow-d:0 30px 60px -30px rgba(0,0,0,.7); --shadow-l:0 26px 50px -30px rgba(70,50,30,.34);
 
     /* — System-Tokens (eine Skala, eine Leiter, eine Kurve) — */
-    /* Type-Skala */
     --step--1:clamp(13px, .35vw + 12.2px, 14px);
     --step-0:clamp(16px, .4vw + 15px, 17px);
     --step-1:clamp(18px, .6vw + 16.5px, 20px);
@@ -50,29 +57,22 @@
     --step-3:clamp(25px, 2vw + 19px, 33px);
     --step-4:clamp(30px, 3.4vw + 18px, 48px);
     --step-5:clamp(34px, 5.6vw + 14px, 70px);
-    /* Zeilenhöhen */
     --lh-tight:1.08; --lh-snug:1.16; --lh-body:1.6; --lh-relaxed:1.72;
-    /* Laufweiten */
     --ls-display:-.03em; --ls-h2:-.022em; --ls-lead:-.005em; --ls-label:.14em;
-    /* Spacing-Leiter (4px-Logik, fluid) */
     --space-1:clamp(8px, 1vw, 12px);
     --space-2:clamp(14px, 1.6vw, 18px);
     --space-3:clamp(20px, 2.4vw, 26px);
     --space-4:clamp(30px, 3.6vw, 40px);
     --space-5:clamp(44px, 5.5vw, 64px);
     --space-6:clamp(64px, 9.5vw, 124px);
-    /* Radien */
     --radius-sm:11px; --radius-pill:999px;
-    /* warme Schatten (ersetzen die grauen) */
     --shadow-d:0 1px 0 rgba(255,236,200,.04), 0 24px 48px -28px rgba(0,0,0,.72), 0 40px 90px -60px rgba(232,146,63,.18);
     --shadow-l:inset 0 1px 0 rgba(255,255,255,.7), 0 2px 6px -3px rgba(120,70,30,.16), 0 24px 48px -28px rgba(120,70,30,.30);
-    /* Licht & Glut */
     --edge-d:inset 0 1px 0 rgba(255,236,200,.06);
     --edge-l:inset 0 1px 0 rgba(255,255,255,.75);
     --ember-glow:0 0 0 1px rgba(231,185,100,.45), 0 18px 46px -22px rgba(232,146,63,.42);
     --glow-l:inset 0 1px 0 rgba(255,255,255,.7), 0 0 0 1px rgba(199,154,79,.35), 0 22px 46px -24px rgba(189,123,84,.34);
     --amber-soft:rgba(232,146,63,.14);
-    /* Motion & Fokus */
     --ease:cubic-bezier(.22,.61,.36,1);
     --focus:0 0 0 3px rgba(232,146,63,.45);
     --focus-l:0 0 0 3px rgba(199,154,79,.45);
@@ -80,7 +80,6 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px);}
   body{background:var(--night);color:var(--bone);font-family:var(--sans);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;}
-  /* feines Korn über alles — taktil, anti-digital */
   body::after{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.035;mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:var(--lh-snug);letter-spacing:var(--ls-h2);text-wrap:balance;}
@@ -89,12 +88,11 @@
   ::selection{background:rgba(232,146,63,.3);color:var(--bone);}
   .wrap{width:min(1120px,92vw);margin-inline:auto;}
   section{padding:var(--space-6) 0;position:relative;}
-  .sec-head{max-width:54ch;margin-bottom:var(--space-5);}
+  .sec-head{max-width:56ch;margin-bottom:var(--space-5);}
   .sec-head h2{font-size:var(--step-4);margin-top:var(--space-2);}
   .sec-head p{font-size:var(--step-1);margin-top:var(--space-3);}
-  .lead,.sec-head p,.hero-sub,.tempo p,.why-close{font-size:var(--step-1);line-height:var(--lh-relaxed);letter-spacing:var(--ls-lead);}
+  .lead,.sec-head p,.hero-sub{font-size:var(--step-1);line-height:var(--lh-relaxed);letter-spacing:var(--ls-lead);}
 
-  /* Helligkeits-Kontexte */
   .dark{background:var(--night);color:var(--bone);}
   .dark h1,.dark h2,.dark h3{color:#fbf5e8;}
   .dark .sec-head p,.dark .lead{color:var(--bone-dim);}
@@ -104,21 +102,16 @@
   .sand{background:var(--sand);}
 
   .eyebrow{font-family:var(--mono);font-weight:500;font-size:var(--step--1);letter-spacing:var(--ls-label);text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;color:var(--ember);}
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px 1px rgba(232,146,63,.6);}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px 1px rgba(232,146,63,.6);flex:none;}
   .light .eyebrow{color:var(--gold-deep);}
   .light .eyebrow::before{box-shadow:none;}
   .wm{font-family:var(--display);font-weight:700;letter-spacing:-.04em;line-height:1;display:inline-flex;align-items:baseline;}
   .wm .lech{color:var(--bone);} .wm .code{color:var(--gold);font-family:var(--mono);font-weight:700;letter-spacing:-.02em;}
 
-  /* Karten-Body — zwei Stufen */
-  .step p,.niche-card p,.price li,.price .desc,.person p,.responsive-box p,.card .sub{font-size:var(--step-0);line-height:var(--lh-body);}
-  .work-meta .name,.work-meta .go,.price .care,.statc .src,.statc .txt,.foot-col a,.price-fine,.placeholder-note,.or-line{font-size:var(--step--1);line-height:var(--lh-body);}
-  .step h3,.niche-card h3,.person h3,.card h3,.responsive-box h3{font-size:var(--step-2);line-height:1.25;}
-
-  /* Zahlen als Hero-Momente */
-  .statc .num,.stat .big,.price .amount{font-size:var(--step-4);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
-  .statc .num,.stat .big{text-shadow:0 0 30px rgba(232,146,63,.30), 0 1px 0 rgba(0,0,0,.2);}
-  .price .amount{text-shadow:0 1px 0 rgba(255,255,255,.6);}
+  .step p,.person p,.price li,.price .desc,.card .sub,.care-banner p{font-size:var(--step-0);line-height:var(--lh-body);}
+  .foot-col a,.price-fine,.note-line,.consent label,.form-note{font-size:var(--step--1);line-height:var(--lh-body);}
+  .step h3,.person h3,.card h3,.care-banner h3{font-size:var(--step-2);line-height:1.25;}
+  .price .amount,.care-banner .amount{font-size:var(--step-4);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;}
 
   /* Buttons — glühende Kohle */
   .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;border:none;
@@ -145,13 +138,13 @@
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
   .nav-toggle span{display:block;width:24px;height:2px;background:var(--bone);border-radius:2px;transition:.3s;}
   .nav-toggle span+span{margin-top:6px;}
-  /* Brand-Logo lebendiger */
-  .brand-mark{transition:filter .4s var(--ease),transform .4s var(--ease);}
+  .brand{display:inline-flex;align-items:center;gap:10px;}
+  .brand-mark{width:30px;height:30px;color:var(--gold);flex:none;transition:filter .4s var(--ease),transform .4s var(--ease);}
   .brand:hover .brand-mark{filter:drop-shadow(0 0 6px rgba(232,146,63,.5));transform:rotate(-3deg) scale(1.04);}
   .brand-mark circle[fill]{filter:drop-shadow(0 0 2.5px rgba(232,146,63,.85));}
 
-  /* ===== 3 · HERO — Lagerfeuer ===== */
-  .hero{overflow:hidden;isolation:isolate;padding:clamp(64px,11vw,128px) 0 clamp(40px,5vw,64px);
+  /* ===== 3 · HERO — Lagerfeuer, Video zuerst ===== */
+  .hero{overflow:hidden;isolation:isolate;text-align:center;padding:clamp(56px,9vw,104px) 0 clamp(48px,6vw,72px);
     background:
       radial-gradient(20vmax 18vmax at 84% 4%, rgba(255,200,130,.30), transparent 56%),
       radial-gradient(46vmax 40vmax at 85% 6%, rgba(232,146,63,.30), transparent 60%),
@@ -165,142 +158,94 @@
       radial-gradient(30vmax 28vmax at 72% 14%, rgba(255,190,120,.10), transparent 62%);
     animation:breathe 11s ease-in-out infinite;}
   @keyframes breathe{0%,100%{opacity:.8;transform:scale(1);}50%{opacity:1;transform:scale(1.05);}}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center;}
-  .hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;}
-  .hero h1{font-size:var(--step-5);line-height:var(--lh-tight);letter-spacing:var(--ls-display);max-width:14ch;margin:var(--space-2) 0 0;}
-  .hero h1 .soul{color:var(--gold);}
-  .hero h1 .q{font-size:.84em;color:var(--bone-dim);}
-  .hero-sub{color:var(--bone-dim);max-width:46ch;margin-top:var(--space-3);}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:var(--space-4);}
-  .hero-trust{display:flex;align-items:center;flex-wrap:wrap;gap:14px 18px;margin-top:var(--space-4);}
+  .hero h1{font-size:var(--step-5);line-height:var(--lh-tight);letter-spacing:var(--ls-display);max-width:18ch;margin:var(--space-2) auto 0;}
+  .hero h1 .q{color:var(--gold);}
+  .hero-sub{color:var(--bone-dim);max-width:54ch;margin:var(--space-3) auto 0;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:var(--space-4);}
+  .hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 16px;margin-top:var(--space-4);}
   .trust{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--bone-dim);
     background:rgba(231,185,100,.08);border:1px solid var(--line-d);padding:9px 16px;border-radius:var(--radius-pill);
     box-shadow:inset 0 1px 0 rgba(247,239,224,.06), 0 8px 20px -14px rgba(232,146,63,.5);transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);}
   .trust:hover{transform:translateY(-1px);border-color:rgba(231,185,100,.4);background:rgba(231,185,100,.12);}
-  .trust-meta{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 12px;font-size:var(--step--1);color:var(--muted);}
-  .trust-meta span{display:inline-flex;align-items:center;gap:12px;}
-  .trust-meta span+span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px 1px rgba(232,146,63,.55);flex:none;}
   .live-dot{width:9px;height:9px;border-radius:50%;background:#7fe0a6;flex:none;box-shadow:0 0 0 0 rgba(127,224,166,.6);animation:pulse 2.4s ease-out infinite;}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,166,.5);}70%{box-shadow:0 0 0 9px rgba(127,224,166,0);}100%{box-shadow:0 0 0 0 rgba(127,224,166,0);}}
 
-  /* Glut-Scheibe + Funken */
-  .ember-disc{position:relative;width:min(420px,80%);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
-    background:radial-gradient(circle at 50% 46%, rgba(240,168,94,.55), rgba(232,146,63,.22) 42%, transparent 68%);
-    box-shadow:0 0 80px -10px rgba(232,146,63,.45), inset 0 0 60px -20px rgba(240,168,94,.4);
-    animation:breathe 11s ease-in-out infinite;}
-  .ember-disc .wave-mark{width:62%;height:auto;color:var(--gold);overflow:visible;}
-  .ember-disc .wave-mark circle[fill]{filter:drop-shadow(0 0 3px rgba(232,146,63,.85));}
-  .sparks{position:absolute;inset:0;pointer-events:none;overflow:visible;}
-  .spark{position:absolute;width:5px;height:5px;border-radius:50%;background:radial-gradient(circle,var(--ember),rgba(232,146,63,0) 70%);opacity:0;
-    animation:spark-rise 6s var(--ease) infinite;}
-  .spark:nth-child(1){left:30%;bottom:24%;animation-duration:6.5s;animation-delay:0s;}
-  .spark:nth-child(2){left:58%;bottom:18%;animation-duration:8s;animation-delay:1.4s;}
-  .spark:nth-child(3){left:46%;bottom:30%;animation-duration:5s;animation-delay:2.6s;}
-  .spark:nth-child(4){left:70%;bottom:34%;animation-duration:7.5s;animation-delay:.8s;}
-  .spark:nth-child(5){left:40%;bottom:14%;animation-duration:9s;animation-delay:3.4s;}
-  @keyframes spark-rise{0%{opacity:0;transform:translateY(0) scale(.6);}15%{opacity:.7;}70%{opacity:.5;}100%{opacity:0;transform:translateY(-120px) scale(1.05);}}
+  /* Video-Bühne (PLATZHALTER-VIDEO) */
+  .video-shell{max-width:880px;margin:clamp(28px,4.5vw,44px) auto 0;}
+  .video-frame{position:relative;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;isolation:isolate;
+    display:grid;place-items:center;text-align:center;padding:clamp(18px,4vw,40px);
+    background:radial-gradient(90% 130% at 50% -20%, rgba(232,146,63,.20), transparent 55%), linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid rgba(231,185,100,.28);
+    box-shadow:var(--edge-d), 0 0 0 1px rgba(231,185,100,.10), 0 40px 90px -40px rgba(0,0,0,.8), 0 30px 80px -40px rgba(232,146,63,.35);}
+  .video-frame .wave-wm{position:absolute;inset:auto;width:min(420px,70%);color:var(--gold);opacity:.06;z-index:-1;}
+  .play-disc{width:clamp(64px,9vw,88px);aspect-ratio:1/1;border-radius:50%;display:grid;place-items:center;
+    background:linear-gradient(180deg,var(--ember),var(--amber));
+    box-shadow:0 0 0 10px rgba(232,146,63,.10), 0 0 0 1px rgba(255,220,170,.35) inset, 0 22px 50px -16px rgba(232,146,63,.65);
+    animation:breathe 5.5s ease-in-out infinite;}
+  .play-disc svg{margin-left:5px;}
+  .video-soon{margin-top:clamp(14px,2.4vw,22px);color:var(--bone-dim);font-size:var(--step-0);line-height:1.5;}
+  .video-soon b{color:#fbf5e8;}
+  .video-soon span{display:block;margin-top:6px;font-family:var(--mono);font-size:var(--step--1);color:var(--muted);letter-spacing:.04em;}
+  .video-cap{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;font-family:var(--hand);font-size:21px;color:var(--gold);}
 
   /* Lech-Welle Trenner */
   .wave{display:block;width:100%;height:56px;}
-  /* sanft fließende Lech-Welle (2 Lagen für Tiefe) */
   .wave-anim{animation:wave-flow 16s linear infinite;will-change:transform;}
   .wave-back{animation-duration:25s;}
   @keyframes wave-flow{to{transform:translateX(-1440px);}}
   @media (prefers-reduced-motion:reduce){.wave-anim{animation:none;}}
 
-  /* ===== 4 · WEDGE (so-arbeiten) ===== */
-  .wedge h2{max-width:18ch;} .wedge .gift{color:var(--clay);}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(36px,5vw,54px);}
-  .step{position:relative;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--edge-l), var(--shadow-l);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
-  .step:hover{transform:translateY(-3px);box-shadow:var(--glow-l);border-color:rgba(199,154,79,.35);}
-  .step .num{font-family:var(--display);font-size:var(--step-0);font-weight:700;color:#7a4a18;background:rgba(232,146,63,.16);width:44px;height:44px;border-radius:var(--radius-sm);display:grid;place-items:center;margin-bottom:16px;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 8px 20px -10px rgba(232,146,63,.5), 0 0 0 1px rgba(232,146,63,.25);}
-  .step h3{margin-bottom:7px;} .step p{color:var(--ink-soft);}
-  @media (min-width:921px){
-    .step:not(:last-child)::after{content:"";position:absolute;top:50px;right:-13px;width:18px;height:2px;background:linear-gradient(90deg,rgba(232,146,63,.5),transparent);}
-  }
-
-  /* ===== 5 · ARBEITEN — wairua-Showcase (dunkel) ===== */
-  .case-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,4.5vw,56px);align-items:center;}
-  .case-copy h2{margin-top:var(--space-2);}
-  .case-copy .lead{margin-top:var(--space-3);}
-  .case-chips{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:var(--space-3) 0;}
-  .chip{font-family:var(--mono);font-size:12px;letter-spacing:.04em;padding:6px 12px;border-radius:var(--radius-pill);}
-  .chip-before{color:var(--muted);background:rgba(154,142,118,.1);border:1px solid var(--line-d);}
-  .chip-after{color:var(--gold);background:rgba(231,185,100,.1);border:1px solid var(--line-d);}
-  .chip-arrow{color:var(--ember);}
-  .browser{display:block;border:1px solid var(--line-d);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--edge-d), var(--shadow-d);background:var(--panel);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);}
-  .browser:hover{transform:translateY(-6px);border-color:rgba(231,185,100,.42);box-shadow:var(--ember-glow), 0 30px 60px -30px rgba(0,0,0,.7);}
-  .browser-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line-d);background:var(--panel-2);}
-  .browser-bar i{width:10px;height:10px;border-radius:50%;background:#3a3122;}
-  .browser-bar .url{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--bone-dim);}
-  .browser-body{min-height:200px;padding:32px 26px 28px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;
-    background:var(--panel);background-image:radial-gradient(120% 120% at 0% 0%, color-mix(in srgb, var(--c-1) 26%, var(--panel)), var(--panel) 75%);}
-  .browser-body .tag{font-family:var(--display);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--c-1);font-weight:600;margin-bottom:10px;}
-  .browser-body .head{font-family:var(--display);font-weight:600;font-size:var(--step-2);line-height:1.15;color:#fbf5e8;max-width:18ch;}
-  .browser-body .swatches{display:flex;gap:6px;margin-top:16px;}
-  .browser-body .swatches i{width:18px;height:18px;border-radius:6px;display:block;box-shadow:inset 0 0 0 1px rgba(247,239,224,.14);}
-  .badge-live{position:absolute;top:14px;right:16px;display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:.06em;font-weight:700;color:#9be8bd;background:rgba(127,224,166,.14);border:1px solid rgba(127,224,166,.34);padding:5px 10px;border-radius:var(--radius-pill);
-    box-shadow:0 0 0 1px rgba(127,224,166,.12), 0 6px 14px -8px rgba(127,224,166,.3);}
-  .badge-live .live-dot{width:7px;height:7px;animation:none;box-shadow:0 0 6px 0 rgba(127,224,166,.7);}
-
-  /* ===== 6 · FÜR WEN (hell/sand) ===== */
-  .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(30px,4vw,46px);}
-  .niche-card{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--edge-l);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);}
-  .niche-card:hover{transform:translateY(-5px);box-shadow:var(--glow-l);border-color:rgba(199,154,79,.35);}
-  .niche-card .ic{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:var(--radius-sm);
-    background:radial-gradient(circle at 50% 40%, rgba(232,146,63,.14), rgba(232,146,63,.06));box-shadow:inset 0 0 0 1px rgba(199,154,79,.18);
-    font-size:22px;margin-bottom:14px;transition:transform .3s var(--ease);transform-origin:left bottom;}
-  .niche-card:hover .ic{transform:translateY(-2px) scale(1.08);}
-  .niche-card h3{margin-bottom:5px;} .niche-card p{color:var(--ink-soft);}
-
-  /* ===== 7 · WARUM (dunkel) ===== */
-  .why{background:radial-gradient(80vmax 50vmax at 100% 0%, rgba(232,146,63,.05), transparent 60%), var(--night);}
-  .why h2{font-size:var(--step-4);}
-  .responsive-box{display:flex;gap:20px;align-items:flex-start;background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:clamp(28px,4vw,42px);box-shadow:var(--edge-d), var(--shadow-d);}
-  .responsive-box .devs{font-size:30px;line-height:1.1;flex:none;white-space:nowrap;padding:10px 12px;border-radius:var(--radius-sm);background:rgba(231,185,100,.08);box-shadow:inset 0 0 0 1px var(--line-d);}
-  .responsive-box h3{margin-bottom:6px;color:var(--gold);}
-  .responsive-box p{color:var(--bone-dim);} .responsive-box b{color:#fbf5e8;}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  .statc{position:relative;overflow:hidden;background:linear-gradient(180deg, color-mix(in srgb,var(--amber) 5%, var(--panel)), var(--panel));border:1px solid var(--line-d);border-radius:var(--radius);padding:24px 22px;box-shadow:var(--edge-d), var(--shadow-d);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
-  .statc:hover{transform:translateY(-3px);box-shadow:var(--ember-glow), 0 30px 60px -30px rgba(0,0,0,.7);border-color:rgba(231,185,100,.3);}
-  .statc::before{content:"";position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(231,185,100,.4),transparent);}
-  .statc .num{color:var(--gold);}
-  .statc .txt{color:var(--bone-dim);margin-top:10px;} .statc .txt b{color:#fbf5e8;}
-  .statc .src{display:block;color:var(--muted);margin-top:14px;border-top:1px solid var(--line-d);padding-top:10px;}
-  .why-close{margin-top:clamp(26px,4vw,38px);max-width:62ch;color:var(--bone-dim);}
-  .why-close b{color:#fbf5e8;}
-
-  /* ===== 8 · PREISE (hell) ===== */
-  .grid-price{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
-  .price{display:flex;flex-direction:column;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:32px 28px;position:relative;box-shadow:var(--edge-l), var(--shadow-l);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
-  .price:hover{transform:translateY(-4px);box-shadow:var(--glow-l);border-color:rgba(199,154,79,.35);}
-  .price.featured{border-color:var(--amber);box-shadow:var(--edge-l), 0 0 0 1px rgba(232,146,63,.35), 0 30px 60px -30px rgba(232,146,63,.45);background:linear-gradient(180deg,#fffaf0,#fcefdb);animation:priceGlow 7s ease-in-out infinite;}
+  /* ===== 4 · STARTANGEBOT (hell) ===== */
+  .offer-grid{display:grid;grid-template-columns:1fr;justify-items:center;}
+  .price{display:flex;flex-direction:column;width:min(760px,100%);background:linear-gradient(180deg,#fffaf0,#fcefdb);border:1px solid var(--amber);border-radius:var(--radius-lg);padding:clamp(28px,4vw,40px) clamp(24px,4vw,44px);position:relative;
+    box-shadow:var(--edge-l), 0 0 0 1px rgba(232,146,63,.35), 0 30px 60px -30px rgba(232,146,63,.45);animation:priceGlow 7s ease-in-out infinite;}
   @keyframes priceGlow{0%,100%{box-shadow:var(--edge-l), 0 0 0 1px rgba(232,146,63,.35), 0 30px 60px -30px rgba(232,146,63,.45);}50%{box-shadow:var(--edge-l), 0 0 0 1px rgba(232,146,63,.42), 0 34px 66px -30px rgba(232,146,63,.52);}}
-  .price.featured:hover{transform:translateY(-4px);}
   .price .pill{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-family:var(--display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;
     background:linear-gradient(180deg,var(--ember),var(--amber));color:#2a1808;padding:6px 14px;border-radius:var(--radius-pill);white-space:nowrap;
     box-shadow:0 8px 18px -8px rgba(232,146,63,.6), inset 0 1px 0 rgba(255,250,240,.35);}
-  .price .plan{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);}
-  .price .amount{margin-top:12px;color:var(--ink);}
-  .price .amount small{font-size:var(--step--1);color:var(--ink-faint);font-weight:500;}
-  .price .care{color:var(--ink-soft);margin-top:6px;} .price .care b{color:var(--gold-deep);}
-  .price .desc{color:var(--ink-soft);margin-top:16px;padding-bottom:18px;border-bottom:1px solid var(--line-l);}
-  .price ul{list-style:none;margin:18px 0 26px;display:flex;flex-direction:column;gap:11px;flex:1;}
-  .price li{color:var(--ink);display:flex;align-items:flex-start;gap:10px;}
-  .price li svg{flex:none;margin-top:3px;}
+  .price .amount{margin-top:10px;color:var(--ink);text-shadow:0 1px 0 rgba(255,255,255,.6);}
+  .price .amount small{font-size:var(--step--1);color:var(--ink-faint);font-weight:500;letter-spacing:0;}
+  .price .desc{color:var(--ink-soft);margin-top:14px;padding-bottom:18px;border-bottom:1px solid var(--line-l);}
+  .price ul{list-style:none;margin:20px 0 26px;display:flex;flex-direction:column;gap:13px;flex:1;}
+  .price li{color:var(--ink);display:flex;align-items:flex-start;gap:11px;}
+  .price li svg{flex:none;margin-top:4px;}
+  .price li b{font-weight:650;}
   .price .btn{width:100%;justify-content:center;}
-  .price-note{text-align:center;margin-top:clamp(28px,4vw,40px);max-width:62ch;margin-inline:auto;color:var(--ink-soft);font-size:var(--step-0);}
-  .price-note b{color:var(--ink);}
-  .price-fine{text-align:center;margin-top:12px;color:var(--ink-faint);}
+  .price-fine{text-align:center;margin-top:14px;color:var(--ink-faint);}
+  .note-line{display:flex;gap:10px;align-items:flex-start;width:min(760px,100%);margin:clamp(20px,3vw,28px) auto 0;color:var(--ink-soft);background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--edge-l);}
+  .note-line .ic{flex:none;font-size:18px;line-height:1.4;}
 
-  /* ===== 9 · ÜBER UNS (dunkel/intim) ===== */
-  .about .sec-head{max-width:58ch;margin-bottom:0;} .about h2{font-size:var(--step-4);}
-  .team-photo{margin:clamp(28px,4.5vw,44px) 0;}
-  .team-photo img{width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:0 40px 80px -36px rgba(0,0,0,.8);border:1px solid var(--line-d);}
-  .team-photo figcaption{font-family:var(--hand);font-size:21px;color:var(--gold);text-align:center;margin-top:16px;}
-  .people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-  .person{background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius);padding:24px;box-shadow:var(--edge-d), var(--shadow-d);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
+  /* ===== 5 · ABLAUF (sand) ===== */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:clamp(36px,5vw,54px);}
+  .step{position:relative;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--edge-l), var(--shadow-l);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
+  .step:hover{transform:translateY(-3px);box-shadow:var(--glow-l);border-color:rgba(199,154,79,.35);}
+  .step .num{font-family:var(--display);font-size:var(--step-0);font-weight:700;color:#7a4a18;background:rgba(232,146,63,.16);width:44px;height:44px;border-radius:var(--radius-sm);display:grid;place-items:center;margin-bottom:14px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 8px 20px -10px rgba(232,146,63,.5), 0 0 0 1px rgba(232,146,63,.25);}
+  .step h3{margin-bottom:7px;font-size:var(--step-1);} .step p{color:var(--ink-soft);}
+  .step .zeit{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--gold-deep);background:rgba(231,185,100,.14);border:1px solid rgba(199,154,79,.25);padding:3px 9px;border-radius:var(--radius-pill);margin-bottom:10px;}
+  @media (min-width:1020px){
+    .step:not(:last-child)::after{content:"";position:absolute;top:48px;right:-12px;width:16px;height:2px;background:linear-gradient(90deg,rgba(232,146,63,.5),transparent);}
+  }
+
+  /* Pflege-Banner (19 €) — dunkle Karte in heller Sektion */
+  .care-banner{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,44px);align-items:center;margin-top:clamp(36px,5vw,54px);
+    background:radial-gradient(120% 160% at 0% 0%, #2a2214, var(--night-2) 70%);color:var(--bone);border:1px solid var(--line-d);border-radius:var(--radius-lg);
+    padding:clamp(24px,4vw,40px) clamp(22px,4vw,44px);box-shadow:var(--edge-d), var(--shadow-d);position:relative;overflow:hidden;}
+  .care-banner::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(40% 80% at 8% 10%, rgba(232,146,63,.14), transparent 60%);}
+  .care-banner .amount{color:var(--gold);text-shadow:0 0 30px rgba(232,146,63,.30);}
+  .care-banner .amount small{display:block;font-size:var(--step--1);color:var(--muted);font-weight:500;letter-spacing:.02em;margin-top:6px;}
+  .care-banner h3{color:#fbf5e8;margin-bottom:8px;}
+  .care-banner p{color:var(--bone-dim);} .care-banner b{color:#fbf5e8;}
+  .care-banner .pill-mini{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);background:rgba(231,185,100,.12);border:1px solid var(--line-d);padding:4px 10px;border-radius:var(--radius-pill);margin-bottom:10px;}
+
+  /* ===== 6 · WER WIR SIND (dunkel) ===== */
+  .about{position:relative;overflow:hidden;background:radial-gradient(60vmax 40vmax at 50% -10%, rgba(199,123,84,.06), transparent 55%), var(--night);}
+  .about > .wrap{position:relative;z-index:1;}
+  .about-bayertor{position:absolute;right:-6px;bottom:0;width:clamp(170px,24vw,290px);color:var(--gold);opacity:.06;pointer-events:none;z-index:0;
+    -webkit-mask:linear-gradient(90deg,transparent,#000 35%);mask:linear-gradient(90deg,transparent,#000 35%);}
+  @media (max-width:600px){.about-bayertor{opacity:.04;}}
+  .people{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:clamp(28px,4.5vw,44px);}
+  .person{background:var(--panel);border:1px solid var(--line-d);border-radius:var(--radius);padding:26px;box-shadow:var(--edge-d), var(--shadow-d);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
   .person:hover{transform:translateY(-3px);box-shadow:var(--ember-glow), 0 30px 60px -30px rgba(0,0,0,.7);border-color:rgba(231,185,100,.3);}
   .person .ic{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:var(--radius-sm);background:rgba(231,185,100,.08);box-shadow:inset 0 0 0 1px var(--line-d);font-size:22px;margin-bottom:14px;}
   .person h3{color:#fbf5e8;}
@@ -308,95 +253,76 @@
   .person p{color:var(--bone-dim);} .person p b{color:var(--ember);font-weight:600;}
   .about .local{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:var(--gold);background:rgba(231,185,100,.1);border:1px solid var(--line-d);padding:8px 15px;border-radius:var(--radius-pill);}
 
-  /* ===== 10 · TEMPO (dunkel) ===== */
-  .tempo{text-align:center;background:var(--night-2);position:relative;}
-  .tempo::before{content:"";position:absolute;top:0;left:0;right:0;height:140px;pointer-events:none;background:radial-gradient(60% 100% at 50% 0%, rgba(232,146,63,.10), transparent 70%);}
-  .tempo h2{font-size:var(--step-4);margin-top:var(--space-2);max-width:18ch;margin-inline:auto;}
-  .tempo p{color:var(--bone-dim);max-width:52ch;margin:var(--space-3) auto 0;}
-  .stats{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(28px,6vw,72px);margin-top:clamp(36px,5vw,52px);}
-  .stat .big{color:var(--gold);}
-  .stat .lbl{font-size:var(--step--1);color:var(--muted);margin-top:6px;}
-
-  /* ===== 11 · KONTAKT (hell) ===== */
-  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:start;}
+  /* ===== 7 · EINTRAGEN (hell) ===== */
+  .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:start;}
   .card{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:30px 28px;box-shadow:var(--edge-l), var(--shadow-l);}
-  .card h3{} .card .sub{color:var(--ink-soft);margin-top:8px;}
-  .booking .btn{margin-top:22px;width:100%;justify-content:center;}
-  .placeholder-note{display:flex;align-items:center;gap:8px;margin-top:16px;color:var(--ink-faint);background:var(--sand);border:1px dashed var(--line-l);padding:9px 13px;border-radius:var(--radius-sm);}
-  .or-line{color:var(--ink-soft);margin-top:18px;}
+  .card .sub{color:var(--ink-soft);margin-top:8px;}
+  .or-line{font-size:var(--step--1);color:var(--ink-soft);margin-top:18px;}
   .or-line a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid rgba(199,154,79,.4);}
   .field{display:flex;flex-direction:column;gap:6px;margin-bottom:15px;}
   .field label{font-size:13px;font-weight:600;color:var(--ink-soft);}
   .field input,.field textarea{font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--cream);border:1.5px solid var(--line-l);border-radius:var(--radius-sm);padding:12px 14px;transition:border-color .2s var(--ease),box-shadow .2s var(--ease);}
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--amber);box-shadow:var(--focus-l);}
-  .field textarea{resize:vertical;min-height:96px;}
-  .form .btn{width:100%;justify-content:center;margin-top:4px;}
+  .field textarea{resize:vertical;min-height:88px;}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:4px 0 16px;}
+  .consent input{flex:none;width:19px;height:19px;margin-top:2px;accent-color:var(--amber);cursor:pointer;}
+  .consent label{color:var(--ink-soft);cursor:pointer;}
+  .consent a{color:var(--gold-deep);font-weight:600;border-bottom:1px solid rgba(199,154,79,.4);}
+  .form .btn{width:100%;justify-content:center;margin-top:2px;}
+  .form-note{display:flex;align-items:flex-start;gap:8px;margin-top:14px;color:var(--ink-faint);}
+  .form-msg{display:none;margin-top:14px;padding:14px 16px;border-radius:var(--radius-sm);font-size:var(--step-0);line-height:1.55;}
+  .form-msg.ok{display:block;background:rgba(154,168,115,.16);border:1px solid rgba(154,168,115,.45);color:#4a5530;}
+  .form-msg.err{display:block;background:rgba(189,123,84,.12);border:1px solid rgba(189,123,84,.4);color:#7a4a2a;}
   .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;}
 
-  /* ===== 12 · FOOTER ===== */
-  footer{background:#100e08;color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 36px;}
+  /* ===== 8 · FOOTER ===== */
+  .site-footer{background:#100e08;color:var(--bone-dim);padding:clamp(48px,7vw,72px) 0 36px;}
   .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
   .foot-brand .wm{font-size:24px;}
+  .foot-logo{display:inline-flex;align-items:center;gap:10px;}
+  .foot-logo .brand-mark{width:27px;height:27px;}
   .foot-brand .tag{font-family:var(--display);font-size:15px;color:var(--bone);margin-top:12px;}
   .foot-brand .tag b{color:var(--amber);}
   .foot-brand .addr{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.7;}
   .foot-col h4{font-family:var(--display);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px;}
   .foot-col a{display:block;color:var(--bone-dim);padding:5px 0;transition:color .2s var(--ease);}
   .foot-col a:hover{color:var(--bone);}
-  .foot-col .todo{font-size:11px;color:var(--muted);}
+  .foot-scene{margin-top:clamp(30px,4.5vw,46px);text-align:center;}
+  .foot-scene .scene-svg{width:min(460px,94%);height:auto;color:var(--gold);margin:0 auto;display:block;}
   .foot-bottom{margin-top:clamp(36px,5vw,52px);padding-top:24px;border-top:1px solid var(--line-d);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--muted);}
   .foot-bottom .wm{font-size:15px;}
 
-  /* ===== Lech-Welle-Logo, Footer-Skyline & Bayertor-Motiv ===== */
-  .brand{display:inline-flex;align-items:center;gap:10px;}
-  .brand-mark{width:30px;height:30px;color:var(--gold);flex:none;}
-  .foot-logo{display:inline-flex;align-items:center;gap:10px;}
-  .foot-logo .brand-mark{width:27px;height:27px;}
-  .foot-scene{margin-top:clamp(30px,4.5vw,46px);text-align:center;}
-  .foot-scene .scene-svg{width:min(460px,94%);height:auto;color:var(--gold);margin:0 auto;display:block;}
-  .about{position:relative;overflow:hidden;background:radial-gradient(60vmax 40vmax at 50% -10%, rgba(199,123,84,.06), transparent 55%), var(--night);}
-  .about > .wrap{position:relative;z-index:1;}
-  .about-bayertor{position:absolute;right:-6px;bottom:0;width:clamp(170px,24vw,290px);color:var(--gold);opacity:.06;pointer-events:none;z-index:0;
-    -webkit-mask:linear-gradient(90deg,transparent,#000 35%);mask:linear-gradient(90deg,transparent,#000 35%);}
-  @media (max-width:600px){.about-bayertor{opacity:.04;}}
-
   /* ===== Fokus-System (A11y) ===== */
-  :where(a,button,.btn,.work,.trust,.niche-card,.price,.brand,.nav-toggle,.browser):focus-visible{outline:none;box-shadow:var(--focus);border-radius:var(--radius-sm);}
+  :where(a,button,.btn,.trust,.price,.brand,.nav-toggle,input,textarea):focus-visible{outline:none;box-shadow:var(--focus);border-radius:var(--radius-sm);}
   .btn:focus-visible,.trust:focus-visible{box-shadow:var(--focus),0 16px 28px -12px rgba(232,146,63,.6);border-radius:var(--radius-pill);}
-  .light a:focus-visible,.light .btn:focus-visible,.light .price:focus-visible,.light .niche-card:focus-visible{box-shadow:var(--focus-l);}
+  .light a:focus-visible,.light .btn:focus-visible,.light input:focus-visible,.light textarea:focus-visible{box-shadow:var(--focus-l);}
   .skip:focus-visible{box-shadow:var(--focus);}
 
   /* ===== Reveal & Responsive ===== */
-  /* Reveal animiert nur den INHALT (.wrap), nie den Sektions-Hintergrund —
-     sonst scheint bei noch unsichtbaren hellen Sektionen der dunkle Body durch
-     („schwarzer Balken unter der Welle"). Die Creme-Fläche ist so ab Frame 1 da. */
   .js .reveal > .wrap{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
   .js .reveal.in > .wrap{opacity:1;transform:none;}
-  /* Stagger — additiv, liegt auf den Inhalts-Kindern INNERHALB .wrap (Fix bleibt) */
   .js .reveal .stagger > *{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
   .js .reveal.in .stagger > *{opacity:1;transform:none;}
   .js .reveal.in .stagger > *:nth-child(2){transition-delay:.06s;}
   .js .reveal.in .stagger > *:nth-child(3){transition-delay:.12s;}
   .js .reveal.in .stagger > *:nth-child(4){transition-delay:.18s;}
-  .js .reveal.in .stagger > *:nth-child(5){transition-delay:.24s;}
-  .js .reveal.in .stagger > *:nth-child(6){transition-delay:.30s;}
+  /* Foto-Modus (?foto): alles sofort sichtbar für Full-Page-Screenshots */
+  .foto .reveal > .wrap,.foto .reveal .stagger > *{opacity:1 !important;transform:none !important;transition:none !important;}
   .skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--amber);color:#2a1808;padding:10px 16px;border-radius:var(--radius-sm);font-weight:600;}
   .skip:focus{left:16px;}
+  @media (max-width:1019px){
+    .steps{grid-template-columns:repeat(2,1fr);}
+  }
   @media (max-width:920px){
-    .hero-grid{grid-template-columns:1fr;gap:clamp(28px,6vw,44px);}
-    .case-grid{grid-template-columns:1fr;gap:32px;}
     .nav-links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--night-2);border-bottom:1px solid var(--line-d);padding:10px 6vw 22px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s;}
     .nav-links.open{transform:none;opacity:1;pointer-events:auto;}
     .nav-links a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line-d);} .nav-links a:not(.btn)::after{display:none;}
     .nav-links .btn{margin-top:14px;justify-content:center;} .nav-toggle{display:block;}
-    .niche-grid,.grid-price,.steps,.stats-grid{grid-template-columns:repeat(2,1fr);}
-    .contact-grid{grid-template-columns:1fr;} .people{grid-template-columns:1fr;}
-    .foot-top{grid-template-columns:1fr 1fr;} .foot-brand{grid-column:1 / -1;}
+    .contact-grid{grid-template-columns:1fr;}
+    .care-banner{grid-template-columns:1fr;gap:16px;}
   }
   @media (max-width:600px){
-    .hero-visual{display:none;}
-    .niche-grid,.grid-price,.steps,.stats-grid{grid-template-columns:1fr;}
-    .responsive-box{flex-direction:column;gap:14px;}
+    .steps,.people{grid-template-columns:1fr;}
     .hero-cta{flex-direction:column;align-items:stretch;} .hero-cta .btn{justify-content:center;}
     .foot-top{grid-template-columns:1fr;} .foot-bottom{flex-direction:column;align-items:flex-start;}
   }
@@ -404,8 +330,7 @@
     *{animation:none !important;scroll-behavior:auto !important;}
     .js .reveal > .wrap{opacity:1;transform:none;transition:none;}
     .js .reveal .stagger > *{opacity:1 !important;transform:none !important;transition:none !important;}
-    .sparks{display:none;}
-    .work,.niche-card,.price,.step,.person,.statc,.trust,.brand-mark,.browser{transition:none !important;transform:none !important;}
+    .price,.step,.person,.trust,.brand-mark,.play-disc{transition:none !important;transform:none !important;}
   }
   </style>
 </head>
@@ -416,7 +341,7 @@
   <!-- NAV -->
   <header class="nav">
     <nav class="wrap nav-in" aria-label="Hauptnavigation">
-      <a class="brand" href="#top" aria-label="Lechcode Startseite">
+      <a class="brand" href="#top">
         <svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="24" cy="24" r="20.5"/>
           <path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/>
@@ -426,44 +351,53 @@
       </a>
       <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
-        <a href="#arbeiten">Arbeiten</a>
-        <a href="#fuer-wen">Für wen</a>
-        <a href="#preise">Preise</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
-        <a class="btn" href="#kontakt">Vorschau holen <span class="arr">→</span></a>
+        <a href="#angebot">Startangebot</a>
+        <a href="#ablauf">So läuft's</a>
+        <a href="#ueber-uns">Wer wir sind</a>
+        <a class="btn" href="#eintragen">Jetzt eintragen <span class="arr">→</span></a>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO mit Video-Bühne -->
     <section class="hero dark">
       <div class="wrap">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">Lokale Web-Agentur · Landsberg am Lech</span>
-            <h1>Deine Arbeit hat <span class="soul">Seele</span>.<br><span class="q">Deine Website noch nicht?</span></h1>
-            <p class="hero-sub">Wir bauen moderne, schnelle Websites aus Landsberg am Lech — für Menschen, die Gutes tun. Fair, persönlich, mit Herz. Und das Schönste: Deine fertige Seite siehst du, bevor wir über Geld reden.</p>
-            <div class="hero-cta">
-              <a class="btn" href="#kontakt">Kostenlose Vorschau <span class="arr">→</span></a>
-              <a class="btn btn-ghost" href="mailto:hallo@lechcode.de">Lieber direkt schreiben</a>
-            </div>
-            <div class="hero-trust">
-              <a class="trust" href="https://wairua-spirit.de" target="_blank" rel="noopener"><span class="live-dot"></span> Schon live: <b style="color:#fff;margin-left:2px;">wairua-spirit.de</b></a>
-              <span class="trust-meta"><span>Aus Landsberg</span><span>Persönlich erreichbar</span><span>Kein Risiko</span></span>
+        <span class="eyebrow">Web-Agentur aus Landsberg am Lech · Code mit Seele</span>
+        <h1>Deine neue Website.<br><span class="q">Morgen schon zum Ansehen.</span></h1>
+        <p class="hero-sub">Trag dich unten ein — innerhalb von 24 Stunden liegt der erste, fertig gestaltete Entwurf deiner neuen Seite in deinem Postfach. Kostenlos, unverbindlich, mit Seele gebaut.</p>
+
+        <!-- ████ PLATZHALTER-VIDEO ████
+             Sobald das Video gedreht ist, diesen .video-frame-Block ersetzen durch:
+             <video class="video-frame" controls preload="none" poster="assets/video-poster.jpg" style="padding:0;display:block;width:100%;height:auto;">
+               <source src="assets/lechcode-video.mp4" type="video/mp4">
+             </video>
+             → Datei lokal hosten (cookiefrei!), Ziel ≤ 15 MB (1080p, H.264, ~2 Min).
+             Kein YouTube-Embed ohne Zwei-Klick-Lösung. -->
+        <div class="video-shell">
+          <div class="video-frame" role="img" aria-label="Video-Platzhalter: Hier erzählen Lenny und Michael in zwei Minuten, wie Lechcode funktioniert. Das Video erscheint in Kürze.">
+            <svg class="wave-wm" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 28 C 13 19, 21 19, 26 26 C 31 33, 39 33, 44 24" stroke-width="3"/>
+              <path d="M6 36 C 13 27, 21 27, 26 34 C 31 41, 39 41, 44 32" stroke-width="2.2" stroke-opacity=".55"/>
+            </svg>
+            <div>
+              <div class="play-disc" aria-hidden="true">
+                <svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true"><path d="M3 2.8 C 3 1.2, 4.7 .3, 6 1.1 L 27.2 15.3 c 1.3 .85, 1.3 2.55, 0 3.4 L 6 32.9 C 4.7 33.7, 3 32.8, 3 31.2 Z" fill="#2a1808"/></svg>
+              </div>
+              <p class="video-soon">Hier sprechen bald <b>Lenny &amp; Michael</b> persönlich zu dir.<span>Video kommt in Kürze · ca. 2 Minuten</span></p>
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div class="ember-disc">
-              <svg class="wave-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 28 C 13 19, 21 19, 26 26 C 31 33, 39 33, 44 24" stroke-width="3"/>
-                <path d="M6 36 C 13 27, 21 27, 26 34 C 31 41, 39 41, 44 32" stroke-width="2.2" stroke-opacity=".55"/>
-                <circle cx="36" cy="14" r="2.4" fill="#e8923f" stroke="none"/>
-              </svg>
-              <div class="sparks"><i class="spark"></i><i class="spark"></i><i class="spark"></i><i class="spark"></i><i class="spark"></i></div>
-            </div>
-          </div>
+          <p class="video-cap">Zwei Minuten, die deine Website verändern ✨</p>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn" href="#eintragen">Meinen Entwurf anfordern <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#ablauf">Wie es funktioniert</a>
+        </div>
+        <div class="hero-trust">
+          <a class="trust" href="https://wairua-spirit.de" target="_blank" rel="noopener"><span class="live-dot"></span> Schon live: <b style="color:#fff;margin-left:2px;">wairua-spirit.de</b></a>
+          <span class="trust">4 Websites in den letzten 4 Tagen gebaut</span>
+          <span class="trust">Du zahlst erst, wenn du deine Seite willst</span>
         </div>
       </div>
     </section>
@@ -479,151 +413,67 @@
       </g>
     </svg>
 
-    <!-- WEDGE (So arbeiten wir) -->
-    <section class="wedge light reveal" id="so-arbeiten">
+    <!-- STARTANGEBOT -->
+    <section class="light reveal" id="angebot">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow">So arbeiten wir</span>
-          <h2>Wir kommen nicht mit einem Angebot.<br><span class="gift">Wir kommen mit einem Geschenk.</span></h2>
-          <p class="lead">Die meisten Agenturen schicken dir erst ein Angebot. Wir machen es umgekehrt: Wir bauen dir deine neue Website vorab und schenken dir die fertige Vorschau. Du schaust sie dir in Ruhe an, ganz für dich. Gefällt sie dir, gehen wir gemeinsam weiter. Und wenn nicht, behältst du eine schöne Idee, geschenkt. Kein Druck. Keine Haken. Kein Risiko für dich.</p>
+          <span class="eyebrow">Zum Start von Lechcode</span>
+          <h2>Die ersten 10 Websites: einmalig 500&nbsp;€. Alles drin.</h2>
+          <p class="lead">Wir kennen es selbst: Eine Website kostet schnell vierstellig, dauert Monate — und am Ende traut man sich kaum, eine Änderung anzufragen. Das wollten wir anders machen. Zum Start vergeben wir die ersten zehn Seiten zum Kennenlern-Preis — damit du siehst, was heute möglich ist.</p>
+        </div>
+        <div class="offer-grid">
+          <div class="price">
+            <span class="pill">Startangebot · nur für die ersten 10</span>
+            <!-- HIER: Zähler bei Bedarf aktualisieren, z. B. „nur für die ersten 10 · 3 vergeben" -->
+            <div class="amount">500 €<small> einmalig — komplette Website inkl. Umzug</small></div>
+            <p class="desc">Du zahlst erst, wenn dir der Entwurf gefällt und du deine neue Seite wirklich willst. Bis dahin kostet dich das Ganze: nichts.</p>
+            <ul>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Komplett neues Design</b> — in deinem bestehenden Branding, oder wir entwerfen dir ein neues: Farben, Schriften, Logo. Alles inklusive.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Erster Entwurf in 24 Stunden</b> — als privater Vorschau-Link per E-Mail, kostenlos und unverbindlich.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>30 Minuten mit Michael</b> — ihr geht die Seite gemeinsam durch, deine Wünsche werden direkt umgesetzt. Finale Version: wieder binnen 24 Stunden.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Umzug komplett inklusive</b> — wir stellen deine Domain um und bringen alles live. Deine E-Mail-Adressen bleiben dabei unangetastet.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Rechtlich sauber</b> — SSL-Verschlüsselung, Impressum &amp; Datenschutzerklärung; ohne Cookies gebaut, wo immer möglich — dann braucht es auch keinen Cookie-Banner.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Blitzschnell auf jedem Gerät</b> — gebaut fürs Handy zuerst: Über 60 % deiner Besucher kommen mobil (StatCounter, 2024/25).</span></li>
+            </ul>
+            <a class="btn" href="#eintragen">Einen der 10 Plätze sichern <span class="arr">→</span></a>
+            <p class="price-fine">Danach gilt unsere reguläre Preisliste · keine versteckten Kosten</p>
+          </div>
+          <p class="note-line"><span class="ic">💡</span><span>Übrigens: Wer bisher ein Baukasten-Abo zahlt (Wix, Jimdo, Squarespace &amp; Co.), spart das künftig komplett ein — je nach Tarif oft mehrere hundert Euro im Jahr.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABLAUF -->
+    <section class="light sand reveal" id="ablauf">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">So läuft's ab</span>
+          <h2>Von „eingetragen" bis „online" — in vier Schritten.</h2>
+          <p class="lead">Du brauchst weder Technik-Wissen noch Vorbereitung. Drei Angaben von dir genügen — den Rest liest unsere Software direkt aus deiner bestehenden Seite.</p>
         </div>
         <div class="steps stagger">
-          <div class="step"><div class="num">1</div><h3>Wir bauen vorab</h3><p>Wir schauen uns an, was du tust und wofür dein Herz schlägt. Dann gestalten wir deine neue Seite, fertig zum Ansehen. Ohne dass du einen Auftrag erteilst, etwas unterschreibst oder vorab zahlst.</p></div>
-          <div class="step"><div class="num">2</div><h3>Du schaust in Ruhe</h3><p>Du bekommst einen Link zu deiner fertigen Vorschau. Schau sie dir an, wann es dir passt. Lass sie wirken. Zeig sie deinem Partner, deiner Freundin, wem du willst. Du entscheidest in deinem Tempo, niemand sitzt dir im Nacken.</p></div>
-          <div class="step"><div class="num">3</div><h3>Dann reden wir</h3><p>Erst jetzt sprechen wir über Preis und nächste Schritte, ganz offen. Sagst du Ja, bringen wir deine Seite gemeinsam online: mit deinen echten Texten, deinen Fotos, deiner Domain. Und wenn nicht? Dann danken wir dir für deine Zeit. Völlig in Ordnung.</p></div>
+          <div class="step"><div class="num">1</div><span class="zeit">2 Minuten</span><h3>Du trägst dich ein</h3><p>Name, E-Mail, Domain — mehr brauchen wir nicht. Optional: deine Wünsche, und was auf der neuen Seite unbedingt stehen soll.</p></div>
+          <div class="step"><div class="num">2</div><span class="zeit">binnen 24 h</span><h3>Dein Entwurf kommt</h3><p>Du bekommst einen privaten Link: deine neue Seite, fertig gestaltet. In Ruhe anschauen — am Handy und am Rechner. Kostenlos, unverbindlich.</p></div>
+          <div class="step"><div class="num">3</div><span class="zeit">30 Minuten</span><h3>Gespräch mit Michael</h3><p>Gefällt dir, was du siehst? Ihr geht die Seite gemeinsam durch, du sagst, was anders soll — und die finale Version kommt wieder binnen 24 Stunden.</p></div>
+          <div class="step"><div class="num">4</div><span class="zeit">ohne Stress</span><h3>Wir bringen sie live</h3><p>Wir ziehen alles um — du gibst uns nur einmal die Zugangsdaten deines Hosting-Anbieters. Deine E-Mail-Adressen fassen wir dabei nie an. Versprochen.</p></div>
         </div>
-      </div>
-    </section>
 
-    <!-- ARBEITEN — wairua als einzige echte, live Referenz -->
-    <section class="dark reveal" id="arbeiten">
-      <div class="wrap">
-        <div class="case-grid">
-          <div class="case-copy">
-            <span class="eyebrow">Unsere erste Seite ist live</span>
-            <h2>Vom Baukasten zur Eigenmarke.</h2>
-            <p class="lead">wairua hatte vorher eine Seite von der Stange — heute ist es eine edle Eigenmarke, die sich anfühlt wie die Arbeit dahinter. Von der ersten Idee bis live in unter einem Tag. Schau selbst.</p>
-            <div class="case-chips"><span class="chip chip-before">vorher · Baukasten</span> <span class="chip-arrow">→</span> <span class="chip chip-after">nachher · Eigenmarke</span></div>
-            <a class="btn" href="https://wairua-spirit.de" target="_blank" rel="noopener">Live ansehen <span class="arr">→</span></a>
+        <!-- Pflege-Service -->
+        <div class="care-banner">
+          <div>
+            <span class="pill-mini">Danach · Startpreis</span>
+            <div class="amount">19 €<small>pro Monat · jederzeit monatlich kündbar</small></div>
           </div>
-          <a class="browser" href="https://wairua-spirit.de" target="_blank" rel="noopener" style="--c-1:#e7b964;" aria-label="wairua-spirit.de in neuem Tab öffnen">
-            <div class="browser-bar"><i></i><i></i><i></i><span class="url">wairua-spirit.de</span></div>
-            <div class="browser-body"><span class="badge-live"><span class="live-dot"></span> LIVE</span><span class="tag">Wildnis · Spiritualität</span><span class="head">Zurück zu deiner wahren Natur.</span><div class="swatches"><i style="background:#0c0e0b;border:1px solid #4a4332"></i><i style="background:#d8a85a"></i><i style="background:#8a9a6b"></i></div></div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FÜR WEN -->
-    <section class="light sand reveal" id="fuer-wen">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">Für wen wir bauen</span>
-          <h2>Für Menschen, die Gutes tun.</h2>
-          <p class="lead">Wir bauen nicht für jede·n — und das ist Absicht. Unser Zuhause sind die Branchen, in denen Arbeit heilt, stärkt und verbindet. Wenn du Menschen guttust, verstehen wir, worum es geht. Und genau das spürt man später auf deiner Seite: Sie fühlt sich an wie du, nicht wie eine Vorlage.</p>
-        </div>
-        <div class="niche-grid stagger">
-          <div class="niche-card"><div class="ic">🌿</div><h3>Gesundheit &amp; Naturheilkunde</h3><p>Heilpraktiker·innen, TCM, Physio, Ernährungsberatung. Damit Menschen schon vor dem ersten Termin Vertrauen fassen.</p></div>
-          <div class="niche-card"><div class="ic">🧘</div><h3>Bewusstsein &amp; Achtsamkeit</h3><p>Yoga, Meditation, Atemarbeit, Retreats. Eine Seite, die so ruhig und einladend wirkt wie dein Raum selbst.</p></div>
-          <div class="niche-card"><div class="ic">💬</div><h3>Coaching &amp; Therapie</h3><p>Coaches, Psychotherapie (HPG), Begleitung, Supervision. Damit man die Sicherheit spürt, die du gibst — schon beim ersten Klick.</p></div>
-          <div class="niche-card"><div class="ic">🤲</div><h3>Geburt &amp; Familie</h3><p>Hebammen, Doulas, Familienbegleitung. Eine Seite, die Wärme ausstrahlt, wenn werdende Eltern sie nachts am Handy finden.</p></div>
-          <div class="niche-card"><div class="ic">🌾</div><h3>Nachhaltigkeit &amp; Bio</h3><p>Hofläden, Unverpackt, regionale Erzeuger. Damit dein ehrliches Tun online genauso direkt rüberkommt wie an der Theke.</p></div>
-          <div class="niche-card"><div class="ic">✨</div><h3>… und Herzensprojekte</h3><p>Du tust Gutes und passt in keine Schublade? Schreib uns trotzdem — wenn deine Arbeit Sinn stiftet, hören wir gern zu.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WARUM -->
-    <section class="why dark reveal" id="warum">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">Warum es sich lohnt</span>
-          <h2>Deine Website arbeitet weiter — auch wenn du längst Feierabend hast.</h2>
-          <p class="lead">Für die meisten Menschen ist deine Website der erste Moment, in dem sie dir begegnen — lange bevor ihr das erste Wort wechselt. Und immer öfter passiert dieser erste Moment am Handy, abends auf dem Sofa, beim Suchen nach jemandem, dem man sich anvertrauen kann. Was sie da sehen, entscheidet, ob sie bleiben.</p>
-        </div>
-        <div class="responsive-box">
-          <div class="devs">📱 💻</div>
-          <div><h3>Was heißt eigentlich „responsive"?</h3><p>Ganz einfach: Deine Seite <b>passt sich von allein an jedes Gerät an</b> — am Handy, am Tablet, am großen Bildschirm sieht sie immer stimmig aus und lässt sich mühelos bedienen. Kein Zoomen, kein Verrutschen, nichts Abgeschnittenes. So fühlt sich jemand vom ersten Moment an willkommen — und genau so bauen wir jede einzelne Seite.</p></div>
-        </div>
-        <div class="stats-grid stagger">
-          <div class="statc"><div class="num">über 60 %</div><p class="txt">aller Website-Aufrufe weltweit kommen heute vom Smartphone. Heißt: Deine Seite muss vor allem <b>am Handy</b> überzeugen — dort begegnen dir die meisten Menschen zuerst.</p><span class="src">Quelle: StatCounter, 2024/25</span></div>
-          <div class="statc"><div class="num">76 %</div><p class="txt">von denen, die am Handy lokal suchen („… in der Nähe"), gehen noch <b>am selben Tag</b> dorthin. Wer dich in Landsberg findet, kann morgen schon bei dir sein.</p><span class="src">Quelle: Google</span></div>
-          <div class="statc"><div class="num">0,05 Sek.</div><p class="txt">so schnell entscheidet sich beim ersten Blick auf deine Seite, ob ein Mensch ein gutes Gefühl bekommt — und damit, ob er dir vertraut.</p><span class="src">Quelle: Studie, Lindgaard et al.</span></div>
-          <div class="statc"><div class="num">75 %</div><p class="txt">machen ihr Urteil über die Glaubwürdigkeit eines Unternehmens allein an dessen Website fest. So viel Herzblut steckt in deiner Arbeit — deine Seite darf das zeigen.</p><span class="src">Quelle: Stanford</span></div>
-        </div>
-        <p class="why-close">Für dich als Selbstständige:n heißt das ganz konkret: Eine moderne, mobile Seite macht dich <b>auffindbar</b>, schafft in Sekunden <b>Vertrauen</b> — und nimmt dir leise Arbeit ab, indem sie rund um die Uhr Anfragen und Termine entgegennimmt. Du musst nicht ans Telefon, nicht zurückrufen, nicht jonglieren. Deine Seite ist einfach da — und arbeitet für dich, während du ganz bei deinen Menschen bist.</p>
-      </div>
-    </section>
-
-    <!-- Lech-Welle: dunkel → hell -->
-    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night);">
-      <g class="wave-anim wave-back">
-        <path d="M0 30 q 120 -16 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
-      </g>
-      <g class="wave-anim">
-        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 L2880 56 L0 56 Z" fill="var(--cream)" stroke="none"/>
-        <path d="M0 30 q 120 -11 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2.5" stroke-linecap="round"/>
-      </g>
-    </svg>
-
-    <!-- PREISE -->
-    <section class="light reveal" id="preise">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">Preise</span>
-          <h2>Ein fairer Preis. Mehr steht nicht im Kleingedruckten.</h2>
-          <p class="lead">Ein fairer Festpreis fürs Bauen. Eine kleine Pauschale für die Pflege. Mehr nicht. Hosting, SSL, kleine Änderungen, immer aktuell gehalten — darum kümmern wir uns. Du musst nie wieder selbst ran. Und falls du dich gerade fragst, was zu dir passt: Sag uns einfach, was du machst — wir empfehlen dir ehrlich das Richtige, auch wenn das das kleinste Paket ist.</p>
-        </div>
-        <div class="grid-price stagger">
-          <div class="price">
-            <span class="plan">Starter</span>
-            <div class="amount">690 €<small> einmalig</small></div>
-            <div class="care">+ <b>19 €</b> / Monat Pflege</div>
-            <p class="desc">Eine schöne Seite, die alles sagt. Dein klarer, warmer Start im Netz — perfekt, wenn du allein arbeitest und einfach gut gefunden werden willst.</p>
-            <ul>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Eine starke Seite, die sich an jedes Gerät anpasst</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Kontakt &amp; Terminbuchung gleich eingebaut</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Schnell, sicher und mit Schloss-Symbol (HTTPS)</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Gestaltet nach deiner Arbeit — nicht von der Stange</li>
-            </ul>
-            <a class="btn btn-ghost" href="#kontakt">Vorschau anfragen</a>
-          </div>
-          <div class="price featured">
-            <span class="pill">Beliebt</span>
-            <span class="plan">Praxis</span>
-            <div class="amount">1.200 €<small> einmalig</small></div>
-            <div class="care">+ <b>29 €</b> / Monat Pflege</div>
-            <p class="desc">Mehr Platz für deine Arbeit — und besser gefunden bei Google. Für Praxen und Läden, die wachsen wollen und Raum brauchen, alles in Ruhe zu zeigen.</p>
-            <ul>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Mehrere Unterseiten — Platz für Angebote, Geschichte, alles</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Terminbuchung &amp; Galerie für deine schönsten Bilder</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> SEO-Basis, damit Google dich vor Ort findet</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Eingerichtetes Google-Unternehmensprofil</li>
-            </ul>
-            <a class="btn" href="#kontakt">Vorschau anfragen <span class="arr">→</span></a>
-          </div>
-          <div class="price">
-            <span class="plan">Premium</span>
-            <div class="amount">ab 1.900 €<small> einmalig</small></div>
-            <div class="care">+ <b>39 €</b> / Monat Pflege</div>
-            <p class="desc">Wenn deine Seite richtig für dich arbeiten soll. Das volle Programm — für alle, die online wirklich Raum einnehmen und Anfragen rund um die Uhr annehmen wollen.</p>
-            <ul>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Alles aus „Praxis", plus:</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Blog, Shop oder mehrere Sprachen</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Wir vermitteln dir Fotograf·innen vor Ort</li>
-              <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> KI-Assistent, der Fragen beantwortet &amp; Termine annimmt</li>
-            </ul>
-            <a class="btn btn-ghost" href="#kontakt">Gespräch vereinbaren</a>
+          <div>
+            <h3>Und du musst nie wieder an deine Website denken.</h3>
+            <p>Du willst etwas ändern — neue Fotos, andere Preise, ein zusätzlicher Abschnitt? <b>Eine E-Mail oder WhatsApp-Sprachnachricht genügt</b>, und es ist meist innerhalb von 24 Stunden online. Hosting, SSL und Sicherheit sind inklusive. Kein Login, kein Baukasten, kein Grübeln.</p>
           </div>
         </div>
-        <p class="price-note"><b>Die monatliche Pflege ist kein Abo-Trick.</b> Sie hält deine Seite sicher, schnell und aktuell — Updates, kleine Änderungen, Hosting, SSL. Du schreibst uns, wir machen. Kein Technik-Stress, kein Login, kein Grübeln. Du hast den Kopf frei für das, was du am besten kannst: deine Arbeit.</p>
-        <p class="price-fine">Domain (~12 €/Jahr) separat · keine versteckten Kosten · jederzeit kündbar</p>
       </div>
     </section>
 
-    <!-- ÜBER UNS -->
+    <!-- WER WIR SIND -->
     <section class="about dark reveal" id="ueber-uns">
-      <!-- leises Bayertor-Motiv (Landsberg-Wahrzeichen) -->
       <svg class="about-bayertor" viewBox="0 0 110 152" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
         <path d="M18 70 L30 28 L42 70"/><path d="M19 70 V152 H41 V70"/>
         <path d="M68 70 L80 28 L92 70"/><path d="M69 70 V152 H91 V70"/>
@@ -635,42 +485,21 @@
         <path d="M46 152 V132 a9 9 0 0 1 18 0 V152"/>
       </svg>
       <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">Über uns</span>
-          <h2>Drei aus Landsberg.<br>Mit Hand und Herz.</h2>
-          <p class="lead">Wir sind Lenny, Marie &amp; Michael — drei Menschen aus Landsberg am Lech, die moderne Technik und echte Werte zusammenbringen.</p>
-          <p class="lead" style="margin-top:var(--space-3);">Hauptberuflich macht jede:r von uns etwas, das Menschen stärkt. Lechcode ist daneben gewachsen — aus einem Moment, der uns gepackt hat: Als wir gesehen haben, was mit KI heute geht (moderne Websites in Tagen statt Monaten), war uns sofort klar, für wen wir das machen wollen. Für die Heilpraktikerin, das Yogastudio, den Hofladen um die Ecke. Für Arbeit mit Sinn, die online endlich so aussehen darf, wie sie sich anfühlt.</p>
-          <p class="lead" style="margin-top:var(--space-3);">Lokal verwurzelt, persönlich erreichbar — bei uns sitzt kein Callcenter zwischen dir und deiner Seite. Du redest mit den Menschen, die sie auch bauen. Und wenn mal was ist, hebt einer von uns dreien ab.</p>
+        <div class="sec-head" style="margin-bottom:0;">
+          <span class="eyebrow">Wer wir sind</span>
+          <h2>Zwei aus Landsberg. Und eine Software mit Seele.</h2>
+          <p class="lead">Wir sind Lenny und Michael — und wir kennen den Website-Schmerz aus eigener Erfahrung: teuer, zäh, und jede kleine Änderung dauert wieder Wochen. Genau deshalb hat Lenny eine eigene KI-Software gebaut. Sie schaut sich deine bestehende Seite an, recherchiert die besten Websites deiner Branche weltweit — und gestaltet daraus deine neue. Und dann kommen wir: zwei Menschen, die zuhören, drüberschauen und den Feinschliff machen.</p>
         </div>
-        <figure class="team-photo">
-          <img src="assets/team.jpg" width="1600" height="1068" loading="lazy" alt="Lenny, Marie und Michael von Lechcode, sitzend vor einer Holzwand" />
-          <figcaption>Lenny · Marie · Michael — Landsberg am Lech</figcaption>
-        </figure>
         <div class="people stagger">
-          <div class="person"><div class="ic">💻</div><h3>Lenny</h3><span class="role">Technik &amp; Umsetzung</span><p>Begleitet hauptberuflich Menschen mit <b>Coming Home</b>. Bei Lechcode kümmert er sich ums Technische — baut deine Seite, hält sie schnell, sicher und aktuell. Du musst dich um nichts davon kümmern.</p></div>
-          <div class="person"><div class="ic">💛</div><h3>Marie</h3><span class="role">Seele &amp; Liebe im Design</span><p>Arbeitet mit Körper, Atem und Herz (<b>Coming Home</b>). Genau dieses Gespür bringt sie ins Design — damit deine Seite sich anfühlt wie du und nicht wie eine Vorlage. Der erste Eindruck, der bei deinen Menschen ankommt, ist ihre Handschrift.</p></div>
-          <div class="person"><div class="ic">🤝</div><h3>Michael</h3><span class="role">Kundenkontakt</span><p>Hat 2020 die Konzernwelt verlassen, die Welt bereist und führt heute mit <b>wairua</b> Menschen zurück in die Natur. Dein herzlicher, direkter Draht zu uns — der zuhört, bevor er etwas vorschlägt.</p></div>
+          <div class="person"><div class="ic">💻</div><h3>Lenny</h3><span class="role">Technik &amp; KI</span><p>Hat die Lechcode-Software gebaut und führt sie. Baut deine Seite, hält sie schnell, sicher und aktuell — du musst dich um nichts davon kümmern. Hauptberuflich begleitet er Menschen mit <b>Coming Home</b>.</p></div>
+          <div class="person"><div class="ic">🤝</div><h3>Michael</h3><span class="role">Dein Gespräch</span><p>Dein direkter Draht zu uns: Er geht mit dir in 30 Minuten durch deinen Entwurf — und hört zu, bevor er vorschlägt. Führt hauptberuflich mit <b>wairua</b> Menschen zurück in die Natur.</p></div>
         </div>
         <div style="text-align:center;margin-top:clamp(26px,4vw,36px);"><span class="local">📍 Landsberg am Lech &amp; Umgebung</span></div>
       </div>
     </section>
 
-    <!-- TEMPO -->
-    <section class="tempo dark reveal">
-      <div class="wrap">
-        <span class="eyebrow" style="justify-content:center;">Tempo mit Sorgfalt</span>
-        <h2>Schnell fertig. Nicht schnell gemacht.</h2>
-        <p>KI ist für uns ein Werkzeug, kein Gimmick. Sie nimmt uns die Fleißarbeit ab — und schenkt uns Zeit für das, was wirklich zählt: das Gespräch mit dir, das Gespür für deine Arbeit, den letzten Feinschliff. Für dich heißt das: Du wartest nicht monatelang und füllst keine endlosen Formulare aus. Du schaust deiner Seite beim Entstehen zu — und hast sie in Tagen in der Hand. Schnell, ja. Aber nie auf Kosten der Sorgfalt, die deine Arbeit verdient.</p>
-        <div class="stats stagger">
-          <div class="stat"><div class="big">&lt; 1 Tag</div><div class="lbl">Go-Live (bewiesen)</div></div>
-          <div class="stat"><div class="big">Tage</div><div class="lbl">statt Monate bis fertig</div></div>
-          <div class="stat"><div class="big">100 %</div><div class="lbl">responsive &amp; sicher — auf jedem Gerät</div></div>
-        </div>
-      </div>
-    </section>
-
     <!-- Lech-Welle: dunkel → hell -->
-    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night-2);">
+    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" fill="none" aria-hidden="true" style="background:var(--night);">
       <g class="wave-anim wave-back">
         <path d="M0 30 q 120 -16 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0 t 240 0" stroke="#e8923f" stroke-width="2" stroke-linecap="round" stroke-opacity=".4"/>
       </g>
@@ -680,36 +509,44 @@
       </g>
     </svg>
 
-    <!-- KONTAKT -->
-    <section class="light reveal" id="kontakt">
+    <!-- EINTRAGEN -->
+    <section class="light reveal" id="eintragen">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow">Sag einfach Hallo</span>
-          <h2>Schreib uns — oder lass dich überraschen.</h2>
-          <p class="lead">Erzähl uns in zwei, drei Sätzen, was du machst — wir bauen dir deine Vorschau und melden uns persönlich. Ganz ohne Druck, ohne Callcenter, ohne Kleingedrucktes.</p>
+          <span class="eyebrow">Los geht's</span>
+          <h2>Trag dich ein — den Rest machen wir.</h2>
+          <p class="lead">Morgen um diese Zeit schaust du schon auf deine neue Seite. Drei Angaben genügen — unsere Software liest alles Weitere selbst aus deiner bestehenden Website.</p>
         </div>
         <div class="contact-grid">
-          <div class="card booking">
-            <h3>Lieber direkt?</h3>
-            <p class="sub">Kein Formular-Zwang, kein Callcenter. Schreib uns einfach eine Mail — es antwortet ein echter Mensch aus Landsberg, meist noch am selben Tag.</p>
-            <a class="btn btn-ghost" href="mailto:hallo@lechcode.de">hallo@lechcode.de <span class="arr">→</span></a>
-            <p class="or-line">Schon live für eine Kundin: <a href="https://wairua-spirit.de" target="_blank" rel="noopener">wairua-spirit.de</a></p>
+          <div class="card">
+            <h3>Deine neue Website anstoßen</h3>
+            <p class="sub" style="margin-bottom:var(--space-3);">Kostenlos &amp; unverbindlich — du entscheidest erst, wenn du den Entwurf gesehen hast.</p>
+            <!-- PLATZHALTER-FORM: Web3Forms-Key einsetzen (kostenlos auf web3forms.com).
+                 Bis dahin öffnet das Formular automatisch eine fertige E-Mail an info@lechcode.de — es geht also nichts verloren. -->
+            <form class="form" id="anfrage-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY">
+              <input type="hidden" name="subject" value="🌊 Neue Website-Anfrage über lechcode.de">
+              <input type="hidden" name="from_name" value="lechcode.de">
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <div class="field"><label for="name">Dein Name *</label><input id="name" type="text" name="name" required autocomplete="name" placeholder="Wie heißt du?"></div>
+              <div class="field"><label for="email">Deine E-Mail *</label><input id="email" type="email" name="email" required autocomplete="email" placeholder="dahin schicken wir deinen Vorschau-Link"></div>
+              <div class="field"><label for="domain">Deine aktuelle Website *</label><input id="domain" type="text" name="domain" required inputmode="url" autocapitalize="none" placeholder="z. B. meine-praxis.de — noch keine? Schreib „keine“"></div>
+              <div class="field"><label for="wuensche">Deine Wünsche <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label><textarea id="wuensche" name="wuensche" placeholder="Was soll unbedingt auf die neue Seite? Was soll anders werden? Gibt es etwas, das aktuell fehlt?"></textarea></div>
+              <div class="consent">
+                <input type="checkbox" id="einwilligung" name="einwilligung" value="AGB + Datenschutz akzeptiert, Inhalte-Nutzung für Vorschau erlaubt" required>
+                <label for="einwilligung">Ich akzeptiere die <a href="agb.html">AGB</a> und die <a href="datenschutz.html">Datenschutzerklärung</a>. Lechcode darf die Inhalte meiner bestehenden Website (Texte, Bilder, Logo) verwenden, um die unverbindliche Vorschau zu erstellen. *</label>
+              </div>
+              <button class="btn" type="submit" id="submit-btn">Meinen Entwurf anfordern <span class="arr">→</span></button>
+              <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
+              <p class="form-note"><span aria-hidden="true">🔒</span><span>Dein Entwurf ist privat: nur über deinen persönlichen Link erreichbar und nicht bei Google gelistet. Erst wenn du Ja sagst, geht deine Seite offiziell online.</span></p>
+            </form>
           </div>
           <div class="card">
-            <h3>Kostenlose Vorschau anfragen</h3>
-            <p class="sub" style="margin-bottom:var(--space-3);">Ein paar Zeilen reichen. Erzähl uns kurz, was du machst — wir melden uns persönlich. Bei uns sitzt kein Callcenter zwischen dir und deiner Seite.</p>
-            <!-- PLATZHALTER-FORM: Web3Forms-Key einsetzen (kostenlos auf web3forms.com). Bis dahin sendet das Formular nicht. -->
-            <form class="form" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY">
-              <input type="hidden" name="subject" value="Neue Anfrage über lechcode.de">
-              <input type="hidden" name="from_name" value="lechcode.de">
-              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-              <div class="field"><label for="name">Name</label><input id="name" type="text" name="name" required placeholder="Wie heißt du?"></div>
-              <div class="field"><label for="email">E-Mail</label><input id="email" type="email" name="email" required placeholder="für unsere Antwort"></div>
-              <div class="field"><label for="biz">Was machst du? (gern mit Website-Link)</label><input id="biz" type="text" name="unternehmen" placeholder="z. B. Heilpraxis, Yogastudio, Hebamme, Hofladen …"></div>
-              <div class="field"><label for="msg">Nachricht <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label><textarea id="msg" name="nachricht" placeholder="Worum geht's? Was wünschst du dir für deine Seite?"></textarea></div>
-              <button class="btn" type="submit">Meine kostenlose Vorschau <span class="arr">→</span></button>
-            </form>
+            <h3>Lieber direkt schreiben?</h3>
+            <p class="sub">Kein Formular-Zwang. Schreib uns einfach — es antwortet ein echter Mensch aus Landsberg, meist noch am selben Tag.</p>
+            <a class="btn btn-ghost" href="mailto:info@lechcode.de" style="margin-top:18px;">info@lechcode.de <span class="arr">→</span></a>
+            <p class="or-line">Schon live für eine Kundin: <a href="https://wairua-spirit.de" target="_blank" rel="noopener">wairua-spirit.de</a></p>
+            <p class="or-line" style="margin-top:10px;">Du hast Fragen zum Ablauf oder zum Preis? Schreib sie einfach dazu — wir antworten ehrlich, auch wenn die Antwort mal ist: „Das brauchst du gar nicht."</p>
           </div>
         </div>
       </div>
@@ -717,23 +554,23 @@
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div class="wrap">
       <div class="foot-top">
         <div class="foot-brand">
           <span class="foot-logo"><svg class="brand-mark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="20.5"/><path d="M8 26 C 13 19, 19 19, 24 25 C 29 31, 35 31, 40 23" stroke-width="2.8"/><circle cx="33" cy="13" r="1.9" fill="#e8923f" stroke="none"/></svg><span class="wm"><span class="lech">lech</span><span class="code">code</span></span></span>
           <p class="tag">Code mit <b>Seele</b>.</p>
-          <p class="addr">Lenny, Marie &amp; Michael · Landsberg am Lech<br>hallo@lechcode.de · lechcode.de</p>
+          <p class="addr">Lenny &amp; Michael · Landsberg am Lech<br>info@lechcode.de · lechcode.de</p>
         </div>
         <div class="foot-col">
           <h4>Seite</h4>
-          <a href="#arbeiten">Arbeiten</a><a href="#fuer-wen">Für wen</a><a href="#preise">Preise</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a>
+          <a href="#angebot">Startangebot</a><a href="#ablauf">So läuft's</a><a href="#ueber-uns">Wer wir sind</a><a href="#eintragen">Eintragen</a>
         </div>
         <div class="foot-col">
           <h4>Rechtliches</h4>
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
-          <a href="https://wairua-spirit.de" target="_blank" rel="noopener">Referenz: wairua-spirit.de</a>
+          <a href="agb.html">AGB</a>
         </div>
       </div>
 
@@ -767,8 +604,8 @@
       </div>
 
       <div class="foot-bottom">
-        <span>© 2026 <span class="wm" style="vertical-align:-2px;"><span class="lech">lech</span><span class="code">code</span></span> · Landsberg am Lech</span>
-        <span class="hand" style="font-family:var(--hand);font-size:18px;color:var(--gold);">mit Liebe gebaut</span>
+        <span>© 2026 <span class="wm" style="vertical-align:-2px;"><span class="lech">lech</span><span class="code">code</span></span> · Schönbach &amp; Storz GbR · Landsberg am Lech</span>
+        <span style="font-family:var(--hand);font-size:18px;color:var(--gold);">mit Liebe gebaut</span>
       </div>
     </div>
   </footer>
@@ -791,6 +628,42 @@
     window.addEventListener('hashchange',revealHash);
     document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){reveal(document.querySelector(a.getAttribute('href')));});});
     revealHash();
+  })();
+  /* Formular: sendet per Web3Forms — solange kein Key eingesetzt ist (PLATZHALTER-FORM),
+     öffnet es stattdessen eine fertige E-Mail im Mailprogramm. So geht keine Anfrage verloren. */
+  (function(){
+    var form=document.getElementById('anfrage-form'),msg=document.getElementById('form-msg'),btn=document.getElementById('submit-btn');
+    if(!form)return;
+    var KEY=form.querySelector('[name="access_key"]').value;
+    var PLATZHALTER=KEY.indexOf('DEIN-')===0;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(form.querySelector('[name="botcheck"]').checked)return;
+      var data={name:form.name.value.trim(),email:form.email.value.trim(),domain:form.domain.value.trim(),wuensche:form.wuensche.value.trim()};
+      if(PLATZHALTER){
+        var body='Hallo Lenny & Michael,%0D%0A%0D%0Aich möchte gern meinen kostenlosen Website-Entwurf:%0D%0A%0D%0AName: '+encodeURIComponent(data.name)+'%0D%0AE-Mail: '+encodeURIComponent(data.email)+'%0D%0AMeine Website: '+encodeURIComponent(data.domain)+'%0D%0AWünsche: '+encodeURIComponent(data.wuensche||'—')+'%0D%0A%0D%0AAGB & Datenschutz akzeptiert, Inhalte dürfen für die Vorschau verwendet werden.';
+        location.href='mailto:info@lechcode.de?subject='+encodeURIComponent('Neue Website-Anfrage: '+data.domain)+'&body='+body;
+        msg.className='form-msg ok';
+        msg.textContent='Dein E-Mail-Programm öffnet sich mit der fertigen Anfrage — einfach absenden. Innerhalb von 24 Stunden hast du deinen Vorschau-Link.';
+        return;
+      }
+      btn.disabled=true;btn.style.opacity='.7';
+      var fd=new FormData(form);
+      fetch('https://api.web3forms.com/submit',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
+        .then(function(r){return r.json();})
+        .then(function(res){
+          if(res.success){
+            msg.className='form-msg ok';
+            msg.textContent='Schön, dass du dabei bist! Deine Anfrage ist unterwegs. Schau morgen um diese Zeit in dein Postfach — dein Vorschau-Link kommt. Bis dahin: einmal tief durchatmen, den Rest machen wir. ☀️';
+            form.reset();
+          }else{throw new Error();}
+        })
+        .catch(function(){
+          msg.className='form-msg err';
+          msg.innerHTML='Hoppla — das hat gerade nicht geklappt. Magst du uns direkt schreiben? <a href="mailto:info@lechcode.de" style="font-weight:600;text-decoration:underline;">info@lechcode.de</a>';
+        })
+        .finally(function(){btn.disabled=false;btn.style.opacity='';});
+    });
   })();
   </script>
 </body>
