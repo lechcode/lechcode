@@ -6,7 +6,7 @@
   ║  Stand 2026-06-12: Kurz-Version fürs Netzwerk — Startangebot.     ║
   ╠══════════════════════════════════════════════════════════════════╣
   ║  ⚠ OFFEN (vor Versand ins Netzwerk):
-  ║   • VIDEO einsetzen — Suche: PLATZHALTER-VIDEO
+  ║   • ✓ erledigt (15.06.): Video lokal eingebettet (cookiefrei) — Poster + Untertitel in assets/
   ║   • ✓ erledigt (12.06.): Formular scharf — Empfänger info@lechcode.de (verifiziert),
   ║     Web3Forms-Key aktiv, zweifach end-to-end getestet
   ║   • ✓ erledigt (12.06.): Web3Forms-Key aktiv · Postfach info@lechcode.de existiert · AGB freigegeben
@@ -18,7 +18,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');if(location.search.indexOf('foto')>-1)document.documentElement.classList.add('foto');</script>
-  <!-- ⚠ NOINDEX bleibt, bis Video + Formular-Key + Postfach stehen. -->
+  <!-- ⚠ NOINDEX noch aktiv — Voraussetzungen (Video · Key · Postfach) erfüllt; raus erst auf Lennys Go (Netzwerk zuerst). -->
   <meta name="robots" content="noindex, nofollow" />
   <title>Lechcode · Deine neue Website — in 24 Stunden zum Ansehen</title>
   <meta name="description" content="Startangebot aus Landsberg am Lech: Die ersten 10 Websites für einmalig 500 € — erster Entwurf in 24 Stunden, Umzug inklusive. Modern, schnell, mit Seele." />
@@ -167,8 +167,6 @@
     background:rgba(231,185,100,.08);border:1px solid var(--line-d);padding:9px 16px;border-radius:var(--radius-pill);
     box-shadow:inset 0 1px 0 rgba(247,239,224,.06), 0 8px 20px -14px rgba(232,146,63,.5);transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);}
   .trust:hover{transform:translateY(-1px);border-color:rgba(231,185,100,.4);background:rgba(231,185,100,.12);}
-  .live-dot{width:9px;height:9px;border-radius:50%;background:#7fe0a6;flex:none;box-shadow:0 0 0 0 rgba(127,224,166,.6);animation:pulse 2.4s ease-out infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(127,224,166,.5);}70%{box-shadow:0 0 0 9px rgba(127,224,166,0);}100%{box-shadow:0 0 0 0 rgba(127,224,166,0);}}
 
   /* Video-Bühne (PLATZHALTER-VIDEO) */
   .video-shell{max-width:880px;margin:clamp(28px,4.5vw,44px) auto 0;}
@@ -367,27 +365,17 @@
         <h1>Deine neue Website.<br><span class="q">Morgen schon zum Ansehen.</span></h1>
         <p class="hero-sub">Du machst wertvolle Arbeit und willst dich um Menschen kümmern — nicht um Technik-Kram. Genau dafür sind wir da: Trag dich unten ein, und innerhalb von 24 Stunden liegt der erste fertige Entwurf deiner neuen Seite in deinem Postfach. Kostenlos, unverbindlich, mit Seele gebaut.</p>
 
-        <!-- ████ PLATZHALTER-VIDEO ████
-             Sobald das Video gedreht ist, diesen .video-frame-Block ersetzen durch:
-             <video class="video-frame" controls preload="none" poster="assets/video-poster.jpg" style="padding:0;display:block;width:100%;height:auto;">
-               <source src="assets/lechcode-video.mp4" type="video/mp4">
-             </video>
-             → Datei lokal hosten (cookiefrei!), Ziel ≤ 15 MB (1080p, H.264, ~2 Min).
-             Kein YouTube-Embed ohne Zwei-Klick-Lösung. -->
+        <!-- Hero-Video: lokal gehostet (cookiefrei, 0 externe Requests). Poster + Untertitel (WebVTT) in assets/.
+             Quelle: „Videos & Fotos/Landingpage Special Offer Video.mov" → 1080p H.264, faststart, 87 MB. -->
         <div class="video-shell">
-          <div class="video-frame" role="img" aria-label="Video-Platzhalter: Hier erzählen Lenny und Michael in zwei Minuten, wie Lechcode funktioniert. Das Video erscheint in Kürze.">
-            <svg class="wave-wm" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 28 C 13 19, 21 19, 26 26 C 31 33, 39 33, 44 24" stroke-width="3"/>
-              <path d="M6 36 C 13 27, 21 27, 26 34 C 31 41, 39 41, 44 32" stroke-width="2.2" stroke-opacity=".55"/>
-            </svg>
-            <div>
-              <div class="play-disc" aria-hidden="true">
-                <svg width="30" height="34" viewBox="0 0 30 34" aria-hidden="true"><path d="M3 2.8 C 3 1.2, 4.7 .3, 6 1.1 L 27.2 15.3 c 1.3 .85, 1.3 2.55, 0 3.4 L 6 32.9 C 4.7 33.7, 3 32.8, 3 31.2 Z" fill="#2a1808"/></svg>
-              </div>
-              <p class="video-soon">Hier sprechen bald <b>Lenny &amp; Michael</b> persönlich zu dir.<span>Video kommt in Kürze · ca. 2 Minuten</span></p>
-            </div>
-          </div>
-          <p class="video-cap">Zwei Minuten, die deine Website verändern ✨</p>
+          <video class="video-frame" controls preload="none" playsinline poster="assets/video-poster.jpg"
+                 aria-label="Vorstellungs-Video: Lenny und Michael von Lechcode erklären in rund sechs Minuten das Startangebot."
+                 style="padding:0;display:block;width:100%;height:auto;background:#0d0b07;">
+            <source src="assets/lechcode-video.mp4" type="video/mp4">
+            <track kind="captions" srclang="de" label="Deutsch" src="assets/lechcode-video.de.vtt">
+            <p style="padding:1.5em;color:var(--bone-dim);text-align:center;">Dein Browser kann das Video nicht direkt abspielen — <a href="assets/lechcode-video.mp4" style="color:var(--gold);">hier herunterladen</a>.</p>
+          </video>
+          <p class="video-cap">Sechs Minuten, die deine Website verändern ✨</p>
         </div>
 
         <div class="hero-cta">
@@ -395,7 +383,6 @@
           <a class="btn btn-ghost" href="#ablauf">Wie es funktioniert</a>
         </div>
         <div class="hero-trust">
-          <a class="trust" href="https://wairua-spirit.de" target="_blank" rel="noopener"><span class="live-dot"></span> Schon live: <b style="color:#fff;margin-left:2px;">wairua-spirit.de</b></a>
           <span class="trust">4 Websites in den letzten 4 Tagen gebaut</span>
           <span class="trust">Du zahlst erst, wenn du deine Seite willst</span>
         </div>
@@ -546,8 +533,7 @@
             <h3>Lieber direkt schreiben?</h3>
             <p class="sub">Kein Formular-Zwang. Schreib uns einfach — es antwortet ein echter Mensch aus Landsberg, meist noch am selben Tag.</p>
             <a class="btn btn-ghost" href="mailto:info@lechcode.de" style="margin-top:18px;">info@lechcode.de <span class="arr">→</span></a>
-            <p class="or-line">Schon live für eine Kundin: <a href="https://wairua-spirit.de" target="_blank" rel="noopener">wairua-spirit.de</a></p>
-            <p class="or-line" style="margin-top:10px;">Du hast Fragen zum Ablauf oder zum Preis? Schreib sie einfach dazu — wir antworten ehrlich, auch wenn die Antwort mal ist: „Das brauchst du gar nicht."</p>
+            <p class="or-line">Du hast Fragen zum Ablauf oder zum Preis? Schreib sie einfach dazu — wir antworten ehrlich, auch wenn die Antwort mal ist: „Das brauchst du gar nicht."</p>
           </div>
         </div>
       </div>
