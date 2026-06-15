@@ -236,6 +236,44 @@
   .care-banner p{color:var(--bone-dim);} .care-banner b{color:#fbf5e8;}
   .care-banner .pill-mini{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold);background:rgba(231,185,100,.12);border:1px solid var(--line-d);padding:4px 10px;border-radius:var(--radius-pill);margin-bottom:10px;}
 
+  /* ===== 5b · WARUM LECHCODE (Vergleich) ===== */
+  .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+  .cost-flip{width:min(900px,100%);margin:clamp(28px,4vw,40px) auto 0;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:clamp(24px,4vw,38px);box-shadow:var(--edge-l), var(--shadow-l);position:relative;overflow:hidden;text-align:center;}
+  .cost-flip::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(46% 80% at 6% 8%, rgba(232,146,63,.12), transparent 60%);}
+  .cost-flip > *{position:relative;}
+  .flip-kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-deep);}
+  .flip-row{display:flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,34px);flex-wrap:wrap;margin-top:12px;}
+  .flip-col{display:flex;flex-direction:column;gap:4px;}
+  .cost-old{font-size:var(--step-2);color:var(--ink-faint);text-decoration:line-through;text-decoration-thickness:2px;}
+  .cost-new{font-family:var(--display);font-weight:700;font-size:var(--step-4);color:var(--gold-deep);letter-spacing:var(--ls-h2);font-variant-numeric:tabular-nums;}
+  .flip-col small{font-size:var(--step--1);color:var(--ink-soft);}
+  .flip-arrow{font-size:var(--step-3);color:var(--amber);line-height:1;}
+  .cost-say{max-width:60ch;margin:16px auto 0;color:var(--ink-soft);font-size:var(--step-0);}
+  .cost-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px;}
+  .cost-chips span{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--gold-deep);background:rgba(231,185,100,.14);border:1px solid rgba(199,154,79,.25);padding:5px 11px;border-radius:var(--radius-pill);}
+  .cost-foot{max-width:62ch;margin:16px auto 0;font-size:var(--step--1);color:var(--ink-faint);}
+  .compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(40px,5.5vw,60px);align-items:start;}
+  .compare-card{position:relative;display:flex;flex-direction:column;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:26px 22px;box-shadow:var(--edge-l), var(--shadow-l);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);}
+  .compare-card:hover{transform:translateY(-3px);box-shadow:var(--glow-l);border-color:rgba(199,154,79,.35);}
+  .compare-card > h3{font-size:var(--step-2);margin-bottom:4px;}
+  .compare-sub{display:block;font-size:var(--step--1);color:var(--ink-faint);padding-bottom:14px;border-bottom:1px solid var(--line-l);margin-bottom:2px;}
+  .compare-card ul{list-style:none;display:flex;flex-direction:column;}
+  .compare-card li{display:flex;gap:11px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line-l);font-size:var(--step-0);color:var(--ink-soft);line-height:1.5;}
+  .compare-card li:last-child{border-bottom:0;padding-bottom:0;}
+  .compare-card li svg{flex:none;margin-top:4px;}
+  .compare-card li b{color:var(--ink);font-weight:600;}
+  .cmp-yes{stroke:var(--gold-deep);} .cmp-no{stroke:var(--clay);} .cmp-mid{stroke:var(--ink-faint);}
+  .compare-card.is-featured{border:1px solid var(--amber);background:linear-gradient(180deg,#fffaf0,#fcefdb);box-shadow:var(--edge-l), 0 0 0 1px rgba(232,146,63,.30), 0 30px 60px -30px rgba(232,146,63,.45);transform:translateY(-6px);}
+  .compare-card.is-featured:hover{transform:translateY(-9px);}
+  .compare-card .pill{position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#3a2708;background:linear-gradient(180deg,var(--gold),var(--gold-deep));padding:5px 14px;border-radius:var(--radius-pill);box-shadow:0 8px 20px -8px rgba(232,146,63,.6);}
+  .arg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(40px,5.5vw,60px);}
+  .arg{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:22px;box-shadow:var(--edge-l);}
+  .arg .ic{font-size:24px;line-height:1;display:block;margin-bottom:10px;}
+  .arg b{display:block;color:var(--ink);font-size:var(--step-1);margin-bottom:4px;}
+  .arg p{color:var(--ink-soft);font-size:var(--step-0);}
+  .vergleich-cta{text-align:center;margin-top:clamp(36px,5vw,52px);}
+  .vergleich-cta p{font-size:var(--step-1);color:var(--ink);margin-bottom:16px;}
+
   /* ===== 6 · WER WIR SIND (dunkel) ===== */
   .about{position:relative;overflow:hidden;background:radial-gradient(60vmax 40vmax at 50% -10%, rgba(199,123,84,.06), transparent 55%), var(--night);}
   .about > .wrap{position:relative;z-index:1;}
@@ -313,6 +351,8 @@
   .skip:focus{left:16px;}
   @media (max-width:1019px){
     .steps{grid-template-columns:repeat(2,1fr);}
+    .compare-grid,.arg-grid{grid-template-columns:repeat(2,1fr);}
+    .compare-card.is-featured{grid-column:1 / -1;transform:none;}
   }
   @media (max-width:920px){
     .nav-links{position:fixed;inset:var(--nav-h) 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--night-2);border-bottom:1px solid var(--line-d);padding:10px 6vw 22px;transform:translateY(-12px);opacity:0;pointer-events:none;transition:.3s;}
@@ -323,7 +363,7 @@
     .care-banner{grid-template-columns:1fr;gap:16px;}
   }
   @media (max-width:600px){
-    .steps,.people{grid-template-columns:1fr;}
+    .steps,.people,.compare-grid,.arg-grid{grid-template-columns:1fr;}
     .hero-cta{flex-direction:column;align-items:stretch;} .hero-cta .btn{justify-content:center;}
     .foot-top{grid-template-columns:1fr;} .foot-bottom{flex-direction:column;align-items:flex-start;}
   }
@@ -331,7 +371,7 @@
     *{animation:none !important;scroll-behavior:auto !important;}
     .js .reveal > .wrap{opacity:1;transform:none;transition:none;}
     .js .reveal .stagger > *{opacity:1 !important;transform:none !important;transition:none !important;}
-    .price,.step,.person,.trust,.brand-mark,.play-disc{transition:none !important;transform:none !important;}
+    .price,.step,.person,.compare-card,.arg,.trust,.brand-mark,.play-disc{transition:none !important;transform:none !important;}
   }
   </style>
 </head>
@@ -354,6 +394,7 @@
       <div class="nav-links" id="nav-links">
         <a href="#angebot">Startangebot</a>
         <a href="#ablauf">So läuft's</a>
+        <a href="#vergleich">Warum Lechcode</a>
         <a href="#ueber-uns">Wer wir sind</a>
         <a class="btn" href="#eintragen">Jetzt eintragen <span class="arr">→</span></a>
       </div>
@@ -423,6 +464,8 @@
               <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Umzug komplett inklusive</b> — wir stellen deine Domain um und bringen alles live. Deine E-Mail-Adressen bleiben dabei unangetastet.</span></li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Rechtlich sauber</b> — SSL-Verschlüsselung, Impressum &amp; Datenschutzerklärung; ohne Cookies gebaut, wo immer möglich — dann braucht es auch keinen Cookie-Banner.</span></li>
               <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Blitzschnell auf jedem Gerät</b> — gebaut fürs Handy zuerst: Über 60 % deiner Besucher kommen mobil (StatCounter, 2024/25).</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Kein Abo, keine Miete — die Seite gehört dir.</b> Du kannst jederzeit umziehen, ganz ohne uns.</span></li>
+              <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="#c79a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Laufend nur deine Domain</b> — rund 10 € im Jahr. Das Hosting übernehmen wir; ein monatliches Abo brauchst du nicht.</span></li>
             </ul>
             <a class="btn" href="#eintragen">Einen der 10 Plätze sichern <span class="arr">→</span></a>
             <p class="price-fine">Danach gilt unsere reguläre Preisliste · keine versteckten Kosten</p>
@@ -450,13 +493,96 @@
         <!-- Pflege-Service -->
         <div class="care-banner">
           <div>
-            <span class="pill-mini">Danach · Startpreis</span>
-            <div class="amount">19 €<small>pro Monat · jederzeit monatlich kündbar</small></div>
+            <span class="pill-mini">Optional · Rundum-sorglos</span>
+            <div class="amount">19 €<small>pro Monat · freiwillig · jederzeit monatlich kündbar</small></div>
           </div>
           <div>
             <h3>Und du musst nie wieder an deine Website denken.</h3>
-            <p>Du willst etwas ändern — neue Fotos, andere Preise, ein zusätzlicher Abschnitt? <b>Eine E-Mail oder WhatsApp-Sprachnachricht genügt</b>, und es ist meist innerhalb von 24 Stunden online. Hosting, SSL und Sicherheit sind inklusive. Kein Login, kein Baukasten, kein Grübeln.</p>
+            <p>Du willst dich um gar nichts kümmern? Dann übernehmen wir das: <b>so viele Änderungen du willst</b> — neue Fotos, andere Preise, ein zusätzlicher Abschnitt. Eine E-Mail oder WhatsApp-Sprachnachricht genügt, meist am nächsten Tag online. Wir halten alles aktuell, sicher und schnell. <b>Ganz freiwillig — wer selten etwas ändert, braucht das nicht.</b></p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARUM LECHCODE (Vergleich) -->
+    <section class="light reveal" id="vergleich">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="eyebrow">Warum Lechcode</span>
+          <h2>Selber basteln, Agentur — oder einfach fertig.</h2>
+          <p class="lead">Du hast im Grunde drei Wege zu einer Website. Wir haben alle drei durchgerechnet — ehrlich, mit Zahlen, die wir auch belegen können. Damit du in einer Minute siehst, was dich ein Weg wirklich kostet: an Geld, an Zeit und an Nerven.</p>
+        </div>
+
+        <div class="cost-flip">
+          <span class="flip-kicker">Was am meisten ausmacht</span>
+          <div class="flip-row">
+            <div class="flip-col"><span class="cost-old">10–25 € / Monat</span><small>Baukasten-Abo, dauerhaft</small></div>
+            <span class="flip-arrow" aria-hidden="true">→</span>
+            <div class="flip-col"><span class="cost-new">~1–2 € / Monat</span><small>nur noch Hosting + Domain</small></div>
+          </div>
+          <p class="cost-say">Das monatliche Baukasten-Abo fällt komplett weg. Was bleibt, ist winzig: Das Hosting deiner Seite übernehmen wir, die Domain kostet rund 10 € im Jahr. Mehr nicht.</p>
+          <div class="cost-chips"><span>✓ kein Abo-Zwang</span><span>✓ kein Cookie-Banner</span><span>✓ Recht inklusive</span></div>
+          <p class="cost-foot">Wer Änderungen lieber abgibt, bucht optional die Rundum-sorglos-Pflege (19 €/Monat, monatlich kündbar). Wer selten etwas ändert, zahlt gar nichts im Monat.</p>
+        </div>
+
+        <div class="compare-grid stagger">
+        <div class="compare-card">
+          <h3>Selber machen</h3>
+          <span class="compare-sub">Baukasten wie Wix, Jimdo, Squarespace</span>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-mid"><path d="M3.5 8h9" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Teils/teils:</span><span><b>Preis am Anfang:</b> Günstig — aber du baust alles selbst</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Laufende Kosten:</b> 10–25 €/Monat — dauerhaft</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Bis sie fertig ist:</b> Wochen in Eigenregie</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Dein Aufwand:</b> Du machst alles selbst</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Design:</b> Vorlage von der Stange</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Recht & Sicherheit:</b> Cookie-Banner, du bist selbst dran</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Änderungen:</b> Selbst im Baukasten klicken</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Wem gehört’s?:</b> Gefangen im Anbieter</span></li>
+          </ul>
+        </div>
+        <div class="compare-card">
+          <h3>Klassische Agentur</h3>
+          <span class="compare-sub">Der übliche Weg für „was Richtiges“</span>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-no"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Nachteil:</span><span><b>Preis am Anfang:</b> Oft vierstellig (1.500–3.500 €)</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-mid"><path d="M3.5 8h9" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Teils/teils:</span><span><b>Laufende Kosten:</b> Hosting + oft teure Wartung</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-mid"><path d="M3.5 8h9" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Teils/teils:</span><span><b>Bis sie fertig ist:</b> Oft Wochen bis Monate</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-mid"><path d="M3.5 8h9" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Teils/teils:</span><span><b>Dein Aufwand:</b> Briefings, Abstimmung, Warten</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Design:</b> Individuell (zum Aufpreis)</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Recht & Sicherheit:</b> Meist dabei</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-mid"><path d="M3.5 8h9" fill="none" stroke-width="2" stroke-linecap="round"/></svg><span class="vh">Teils/teils:</span><span><b>Änderungen:</b> Pro Stunde, oft Paketzwang</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Wem gehört’s?:</b> Meist dir</span></li>
+          </ul>
+        </div>
+        <div class="compare-card is-featured">
+          <span class="pill">empfohlen</span>
+          <h3>Lechcode</h3>
+          <span class="compare-sub">Fertig gebaut, du sagst nur Ja</span>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Preis am Anfang:</b> 500 € einmalig, alles drin</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Laufende Kosten:</b> ~1–2 €/Monat (nur Domain) — Hosting übernehmen wir</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Bis sie fertig ist:</b> Erster Entwurf in 24 Stunden</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Dein Aufwand:</b> Drei Angaben — den Rest machen wir</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Design:</b> Auf deine Branche zugeschnitten</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Recht & Sicherheit:</b> SSL, Impressum & Datenschutz — oft ganz ohne Cookie-Banner</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Änderungen:</b> Eine Nachricht genügt — einzeln oder mit optionaler Pflege</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" class="cmp-yes"><path d="M3 8.5l3 3 7-7" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="vh">Vorteil:</span><span><b>Wem gehört’s?:</b> Dir — kein Lock-in, jederzeit umziehbar</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="arg-grid stagger">
+        <div class="arg"><span class="ic" aria-hidden="true">🎁</span><b>Erst sehen, dann zahlen</b><p>Deinen Entwurf bekommst du kostenlos. Du zahlst nur, wenn er dir gefällt.</p></div>
+        <div class="arg"><span class="ic" aria-hidden="true">🔓</span><b>Die Seite gehört dir</b><p>Kein Anbieter, der dich einsperrt. Du kannst jederzeit umziehen — ganz ohne uns.</p></div>
+        <div class="arg"><span class="ic" aria-hidden="true">🔁</span><b>Änderungen ohne Abo-Zwang</b><p>Eine kurze Nachricht genügt. Zahl pro Änderung oder pauschal — wie du magst.</p></div>
+        <div class="arg"><span class="ic" aria-hidden="true">🍪</span><b>Ohne Cookie-Banner gebaut</b><p>Wo immer möglich ganz ohne Cookies — dann nervt auch kein Banner deine Besucher.</p></div>
+        <div class="arg"><span class="ic" aria-hidden="true">⚡</span><b>Schnell & leicht</b><p>Gebaut fürs Handy zuerst, lädt flott auf jedem Gerät. Kein behäbiger Baukasten.</p></div>
+        <div class="arg"><span class="ic" aria-hidden="true">🌱</span><b>Zwei Menschen, die zuhören</b><p>Wir arbeiten selbst täglich mit Menschen — und wissen, wie sich deine Arbeit schön gezeigt anfühlt.</p></div>
+        </div>
+
+        <div class="vergleich-cta">
+          <p>Klingt gut? Dann lass uns dir einfach zeigen, wie deine aussehen würde.</p>
+          <a class="btn" href="#eintragen">Meinen kostenlosen Entwurf ansehen <span class="arr">→</span></a>
         </div>
       </div>
     </section>
@@ -553,7 +679,7 @@
         </div>
         <div class="foot-col">
           <h4>Seite</h4>
-          <a href="#angebot">Startangebot</a><a href="#ablauf">So läuft's</a><a href="#ueber-uns">Wer wir sind</a><a href="#eintragen">Eintragen</a>
+          <a href="#angebot">Startangebot</a><a href="#ablauf">So läuft's</a><a href="#vergleich">Warum Lechcode</a><a href="#ueber-uns">Wer wir sind</a><a href="#eintragen">Eintragen</a>
         </div>
         <div class="foot-col">
           <h4>Rechtliches</h4>
