@@ -240,6 +240,11 @@
   #vergleich .sec-head{margin-inline:auto;text-align:center;}
   #ueber-uns .sec-head{margin-inline:auto;text-align:center;}
   #eintragen .sec-head{margin-inline:auto;text-align:center;}
+  .proof-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:clamp(28px,4vw,40px);}
+  .proof-stats .stat{background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius);padding:clamp(22px,3vw,32px);box-shadow:var(--edge-l), var(--shadow-l);text-align:center;}
+  .proof-stats .stat-num{font-family:var(--display);font-weight:700;font-size:var(--step-4);color:var(--gold-deep);letter-spacing:var(--ls-display);line-height:1;}
+  .proof-stats .stat-label{font-family:var(--display);font-weight:600;font-size:var(--step-1);color:var(--ink);margin-top:6px;}
+  .proof-stats .stat p{color:var(--ink-soft);font-size:var(--step-0);margin-top:10px;max-width:44ch;margin-inline:auto;}
   .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
   .cost-flip{width:min(900px,100%);margin:clamp(28px,4vw,40px) auto 0;background:var(--warm-white);border:1px solid var(--line-l);border-radius:var(--radius-lg);padding:clamp(24px,4vw,38px);box-shadow:var(--edge-l), var(--shadow-l);position:relative;overflow:hidden;text-align:center;}
   .cost-flip::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(46% 80% at 6% 8%, rgba(232,146,63,.12), transparent 60%);}
@@ -366,7 +371,7 @@
     .care-banner{grid-template-columns:1fr;gap:16px;}
   }
   @media (max-width:600px){
-    .steps,.people,.compare-grid,.arg-grid{grid-template-columns:1fr;}
+    .steps,.people,.compare-grid,.arg-grid,.proof-stats{grid-template-columns:1fr;}
     .hero-cta{flex-direction:column;align-items:stretch;} .hero-cta .btn{justify-content:center;}
     .foot-top{grid-template-columns:1fr;} .foot-bottom{flex-direction:column;align-items:flex-start;}
   }
@@ -526,6 +531,19 @@
           <p class="cost-say">Das monatliche Baukasten-Abo fällt komplett weg. Was bleibt, ist winzig: Das Hosting deiner Seite übernehmen wir, die Domain kostet rund 10 € im Jahr. Mehr nicht.</p>
           <div class="cost-chips"><span>✓ kein Abo-Zwang</span><span>✓ kein Cookie-Banner</span><span>✓ Recht inklusive</span></div>
           <p class="cost-foot">Wer Änderungen lieber abgibt, bucht optional die Rundum-sorglos-Pflege (19 €/Monat, monatlich kündbar). Wer selten etwas ändert, zahlt gar nichts im Monat.</p>
+        </div>
+
+        <div class="proof-stats">
+          <div class="stat">
+            <div class="stat-num">≈&nbsp;5×</div>
+            <div class="stat-label">schneller geladen</div>
+            <p>So viel schneller laden im Schnitt die Seiten, die wir bisher gebaut haben — gemessen. Tempo zählt für Google und für den ersten Eindruck bei deinen Besuchern.</p>
+          </div>
+          <div class="stat">
+            <div class="stat-num">über&nbsp;60&nbsp;%</div>
+            <div class="stat-label">kommen am Handy</div>
+            <p>So viele Besucher sind heute mobil unterwegs. Die meisten älteren Seiten sind am Handy mühsam — bei uns ist das Handy der Ausgangspunkt, nicht die Notlösung.</p>
+          </div>
         </div>
 
         <div class="compare-grid stagger">
