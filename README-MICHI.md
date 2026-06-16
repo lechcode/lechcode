@@ -9,7 +9,7 @@ Live ist sie unter **https://lechcode.de**.
 ## ✏️ Ändern (empfohlen: wie bei wairua)
 1. **Repo holen** (einmalig):
    ```
-   git clone https://github.com/ComingHomeMira/lechcode.git
+   git clone https://github.com/Lechcode/lechcode.git
    cd lechcode
    ```
 2. Ordner in **Claude Code** öffnen, sagen was du willst („ändere den Preis-Text …").

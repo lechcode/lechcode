@@ -7,8 +7,8 @@ Eine Datei pro Seite, **kein Build** (kein npm/Vite). Einfach `index.html` im Br
 - **`index.html`** — die komplette Landingpage (HTML + CSS + JS inline). Kurz-Version (Juni 2026) fürs Netzwerk: Hero mit Video-Bühne → Startangebot (500 €) → Ablauf (4 Schritte) + Pflege-Banner (19 €/M) → Wer wir sind → Formular.
 - **`impressum.html` · `datenschutz.html` · `agb.html`** — Rechtsseiten (gemeinsames `assets/legal.css`).
 - **`assets/og.jpg`** — Teilen-Vorschaubild (WhatsApp/Social, 1200×630).
-- **Hosting:** GitHub Pages, Repo `ComingHomeMira/lechcode`. `git push` auf `main` → in ~1 Min live unter **https://lechcode.de** (CNAME; IONOS-DNS zeigt auf GitHub Pages).
-  ⚠ Push braucht den Account **ComingHomeMira** (`gh auth switch -u ComingHomeMira`), der `lechcode`-Account hat keine Schreibrechte.
+- **Hosting:** GitHub Pages, Repo `Lechcode/lechcode`. `git push` auf `main` → in ~1 Min live unter **https://lechcode.de** (CNAME; IONOS-DNS zeigt auf GitHub Pages).
+  Push läuft über den Account **Lechcode** (seit Umzug 16.06.2026 das einzige genutzte Konto; das alte `ComingHomeMira` wird nicht mehr verwendet).
 
 ## Marke, Ton & Look (bitte einhalten)
 - **Team: Lenny & Michael** (Schönbach & Storz GbR). Kontakt: **info@lechcode.de**.
