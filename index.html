@@ -757,7 +757,10 @@
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,els=document.querySelectorAll('.reveal');
     function reveal(el){if(el)el.classList.add('in');}
     if(reduce||!('IntersectionObserver' in window)){els.forEach(reveal);return;}
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -10% 0px'});
+    /* threshold 0: blendet ein, sobald der Abschnitt überhaupt ins Bild kommt. Wichtig für sehr hohe
+       Abschnitte (z. B. #vergleich am Handy): bei threshold>0 erreichen sie auf manchen Geräten nie genug
+       Sichtbarkeit und bleiben dauerhaft unsichtbar (leerer Platz). rootMargin sorgt für den sanften Versatz. */
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -10% 0px'});
     els.forEach(function(el){io.observe(el);});
     els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0){reveal(el);io.unobserve(el);}});
     function revealHash(){if(location.hash)reveal(document.querySelector(location.hash));}
