@@ -756,13 +756,39 @@
   (function(){
     var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,els=document.querySelectorAll('.reveal');
     function reveal(el){if(el)el.classList.add('in');}
-    if(reduce||!('IntersectionObserver' in window)){els.forEach(reveal);return;}
-    /* threshold 0: blendet ein, sobald der Abschnitt überhaupt ins Bild kommt. Wichtig für sehr hohe
-       Abschnitte (z. B. #vergleich am Handy): bei threshold>0 erreichen sie auf manchen Geräten nie genug
-       Sichtbarkeit und bleiben dauerhaft unsichtbar (leerer Platz). rootMargin sorgt für den sanften Versatz. */
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){reveal(e.target);io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -10% 0px'});
-    els.forEach(function(el){io.observe(el);});
-    els.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<(window.innerHeight||0)&&r.bottom>0){reveal(el);io.unobserve(el);}});
+    function revealAll(){for(var i=0;i<els.length;i++)reveal(els[i]);}
+    if(reduce){revealAll();return;} // keine Animation gewünscht -> alles sofort zeigen
+
+    /* Scroll-Fallback (reines getBoundingClientRect): blendet Abschnitte beim Scrollen ein und funktioniert
+       in JEDEM Browser — auch In-App-WebViews wie dem Google-App-Browser, wo der IntersectionObserver
+       mitunter nicht feuert. So kann kein Abschnitt je dauerhaft unsichtbar bleiben (leerer Platz). */
+    function checkInView(){
+      var vh=window.innerHeight||document.documentElement.clientHeight;
+      for(var i=0;i<els.length;i++){
+        var el=els[i];if(el.classList.contains('in'))continue;
+        var r=el.getBoundingClientRect();
+        if(r.top<vh&&r.bottom>0)reveal(el);
+      }
+      if(!document.querySelector('.reveal:not(.in)')){ // alles sichtbar -> Listener abräumen
+        window.removeEventListener('scroll',checkInView);
+        window.removeEventListener('resize',checkInView);
+        window.removeEventListener('touchmove',checkInView);
+      }
+    }
+
+    /* threshold 0: blendet ein, sobald der Abschnitt überhaupt ins Bild kommt — wichtig für sehr hohe
+       Abschnitte (z. B. #vergleich am Handy), die bei threshold>0 auf manchen Geräten nie genug
+       Sichtbarkeit erreichen. rootMargin sorgt für den sanften Versatz. */
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)reveal(e.target);});},{threshold:0,rootMargin:'0px 0px -10% 0px'});
+      for(var j=0;j<els.length;j++)io.observe(els[j]);
+    }
+    window.addEventListener('scroll',checkInView,{passive:true});
+    window.addEventListener('resize',checkInView,{passive:true});
+    window.addEventListener('touchmove',checkInView,{passive:true});
+    checkInView();                 // bereits sichtbare Abschnitte sofort zeigen
+    setTimeout(checkInView,1200);  // Sicherheitsnetz, nachdem Layout/Fonts gesetzt sind
+
     function revealHash(){if(location.hash)reveal(document.querySelector(location.hash));}
     window.addEventListener('hashchange',revealHash);
     document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){reveal(document.querySelector(a.getAttribute('href')));});});
