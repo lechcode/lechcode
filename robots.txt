@@ -1,0 +1,7 @@
+# Lechcode · lechcode.de
+# Alles darf gelesen werden — die Seite hat keinen geschützten Bereich.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://lechcode.de/sitemap.xml
