@@ -7,8 +7,8 @@ Eine Datei pro Seite, **kein Build** (kein npm/Vite). Einfach `index.html` im Br
 - **`index.html`** — die komplette Landingpage (HTML + CSS + JS inline). Kurz-Version (Juni 2026) fürs Netzwerk: Hero mit Video-Bühne → Startangebot (500 €) → Ablauf (4 Schritte) + Pflege-Banner (19 €/M) → Wer wir sind → Formular.
 - **`impressum.html` · `datenschutz.html` · `agb.html`** — Rechtsseiten (gemeinsames `assets/legal.css`).
 - **`assets/og.jpg`** — Teilen-Vorschaubild (WhatsApp/Social, 1200×630).
-- **Hosting:** GitHub Pages, Repo `Lechcode/lechcode`. `git push` auf `main` → in ~1 Min live unter **https://lechcode.de** (CNAME; IONOS-DNS zeigt auf GitHub Pages).
-  Push läuft über den Account **Lechcode** (seit Umzug 16.06.2026 das einzige genutzte Konto; das alte `ComingHomeMira` wird nicht mehr verwendet).
+- **Hosting:** GitHub Pages, Repo `lechcode/lechcode`. `git push` auf `main` → in ~1 Min live unter **https://lechcode.de** (Custom Domain via CNAME; IONOS-DNS: Apex-A-Records + www-CNAME zeigen auf GitHub Pages, MX unberührt bei Google).
+  Push läuft über den Account **lechcode**. Domain-Umzug am **24.07.2026** vollzogen: `lechcode.de` liegt seither als Custom Domain auf `lechcode/lechcode`; das alte `ComingHomeMira/lechcode` (CNAME-Datei + Custom Domain entfernt) liefert die Agentur-Website nicht mehr aus und wird nicht mehr genutzt.
 
 ## Marke, Ton & Look (bitte einhalten)
 - **Team: Lenny & Michael** (Schönbach & Storz GbR). Kontakt: **info@lechcode.de**.
