@@ -395,10 +395,13 @@
 
   <!-- ===== Strukturierte Daten (JSON-LD) =====
        Sagt Google, WER wir sind, WO wir sitzen und WAS wir anbieten.
-       Verknüpft die Website mit dem Google-Unternehmensprofil.
-       ⚠ TODO: Sobald das Unternehmensprofil bestätigt ist, den Google-Maps-Link
-       des Profils unter "sameAs" eintragen — das ist die eigentliche Klammer
-       zwischen Website und Profil. Ebenso Telefonnummer unter "telephone".      -->
+       Wir sind ein Dienstleister mit Einzugsgebiet, kein Ladengeschäft: Die Adresse
+       steht hier, weil § 5 DDG sie ohnehin öffentlich verlangt — im Unternehmensprofil
+       bleibt sie bewusst ausgeblendet. Das Einzugsgebiet unter "areaServed" ist für uns
+       das eigentliche Ortssignal.
+       "sameAs" zeigt auf unser Google-Unternehmensprofil (Knowledge-Graph-ID /g/11ntdf7fjc).
+       ⚠ TODO: Telefonnummer unter "telephone" ergänzen, sobald es eine gibt — sie muss
+       dann zeichengenau der Nummer im Unternehmensprofil entsprechen.               -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -411,6 +414,9 @@
         "description": "Lechcode baut moderne Websites für kleine Unternehmen aus Landsberg am Lech und Umgebung — erster Entwurf in 24 Stunden, Umzug inklusive, Pflege ab 19 € im Monat.",
         "url": "https://lechcode.de/",
         "email": "info@lechcode.de",
+        "sameAs": [
+          "https://www.google.com/search?kgmid=/g/11ntdf7fjc"
+        ],
         "image": "https://lechcode.de/assets/og.jpg",
         "slogan": "Code mit Seele.",
         "priceRange": "€€",
